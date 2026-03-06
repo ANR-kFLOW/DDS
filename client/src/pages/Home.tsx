@@ -64,6 +64,7 @@ export default function Home() {
         </div>
       </section>
 
+      <LogoStrip />
       <About />
       <Topics />
       
@@ -192,7 +193,6 @@ export default function Home() {
       <Venue />
       <Chairs />
       <Committee />
-      <LogoStrip />
     </div>
   );
 }
