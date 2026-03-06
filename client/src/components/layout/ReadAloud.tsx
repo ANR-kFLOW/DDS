@@ -177,7 +177,7 @@ export default function ReadAloud() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-8 left-8 z-40 w-80 bg-card border border-border rounded-2xl shadow-2xl dark:shadow-primary/5 overflow-hidden print:hidden"
+            className="fixed bottom-8 left-8 z-40 w-80 bg-card border rounded-2xl shadow-2xl overflow-hidden print:hidden"
             role="region"
             aria-label="Read aloud controls"
           >
@@ -207,7 +207,7 @@ export default function ReadAloud() {
                       setCurrentSection(idx);
                       if (isPlaying || isPaused) handleSectionClick(idx);
                     }}
-                    className="w-full appearance-none bg-secondary/50 border border-border text-foreground rounded-xl px-4 py-2.5 pr-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    className="w-full appearance-none bg-secondary/50 border rounded-xl px-4 py-2.5 pr-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50"
                     data-testid="select-read-section"
                     aria-label="Select section to read"
                   >
@@ -280,7 +280,7 @@ export default function ReadAloud() {
                   step="0.1"
                   value={rate}
                   onChange={(e) => setRate(Number(e.target.value))}
-                  className="w-full accent-primary h-1.5 bg-secondary rounded-full"
+                  className="w-full accent-primary h-1.5"
                   data-testid="slider-read-speed"
                   aria-label="Reading speed"
                 />
