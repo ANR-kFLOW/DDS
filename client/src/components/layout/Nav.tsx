@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -18,12 +18,16 @@ export default function Nav() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
       setMobileOpen(false);
+      el.setAttribute("tabindex", "-1");
+      el.focus({ preventScroll: true });
     }
   };
 
@@ -58,28 +62,81 @@ export default function Nav() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape" && mobileOpen) {
+      setMobileOpen(false);
+      menuButtonRef.current?.focus();
+    }
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
+  useEffect(() => {
+    if (mobileOpen && mobileNavRef.current) {
+      const focusable = mobileNavRef.current.querySelectorAll<HTMLElement>("button, a");
+      if (focusable.length > 0) focusable[0].focus();
+
+      const trapFocus = (e: KeyboardEvent) => {
+        if (e.key !== "Tab" || !mobileNavRef.current) return;
+        const items = mobileNavRef.current.querySelectorAll<HTMLElement>("button, a");
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      };
+      document.addEventListener("keydown", trapFocus);
+      return () => document.removeEventListener("keydown", trapFocus);
+    }
+  }, [mobileOpen]);
+
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
+
       <div
         className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-primary via-purple-500 to-primary z-[60] transition-all duration-150"
         style={{ width: `${scrollProgress}%` }}
+        role="progressbar"
+        aria-valuenow={Math.round(scrollProgress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Page scroll progress"
       />
 
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav shadow-lg' : 'bg-transparent'}`}>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav shadow-lg' : 'bg-transparent'}`}
+        role="banner"
+      >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div
-            className="font-bold text-xl tracking-tight cursor-pointer select-none"
-            onClick={() => scrollTo("home")}
+          <a
+            href="#home"
+            className="font-bold text-xl tracking-tight select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
+            onClick={(e) => { e.preventDefault(); scrollTo("home"); }}
+            aria-label="DDS 2026 — go to top"
           >
             DDS <span className="text-primary">2026</span>
-          </div>
+          </a>
 
-          <nav className="hidden md:flex items-center gap-1 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-1 text-sm font-medium" role="navigation" aria-label="Main navigation">
             {links.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className={`relative px-3 py-2 rounded-full transition-colors ${
+                aria-current={activeSection === link.id ? "true" : undefined}
+                className={`relative px-3 py-2 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                   activeSection === link.id
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
@@ -98,10 +155,13 @@ export default function Nav() {
           </nav>
 
           <button
-            className="md:hidden p-2 rounded-xl hover:bg-secondary/50 transition-colors"
+            ref={menuButtonRef}
+            className="md:hidden p-2 rounded-xl hover:bg-secondary/50 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             onClick={() => setMobileOpen(!mobileOpen)}
             data-testid="button-mobile-menu"
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -117,14 +177,21 @@ export default function Nav() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
             onClick={() => setMobileOpen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
           >
             <motion.nav
+              ref={mobileNavRef}
+              id="mobile-nav"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-2xl p-8 pt-20 flex flex-col gap-2"
               onClick={(e) => e.stopPropagation()}
+              role="navigation"
+              aria-label="Mobile navigation"
             >
               {links.map((link, i) => (
                 <motion.button
@@ -133,7 +200,8 @@ export default function Nav() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => scrollTo(link.id)}
-                  className={`text-left px-4 py-3 rounded-xl text-lg font-medium transition-colors ${
+                  aria-current={activeSection === link.id ? "true" : undefined}
+                  className={`text-left px-4 py-3 rounded-xl text-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                     activeSection === link.id
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:bg-secondary/50"

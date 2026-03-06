@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const shapes = [
   { size: 80, x: "10%", y: "20%", duration: 18, delay: 0, opacity: 0.08, type: "circle" },
@@ -12,8 +12,12 @@ const shapes = [
 ];
 
 export default function HeroParticles() {
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) return null;
+
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {shapes.map((shape, i) => (
         <motion.div
           key={i}

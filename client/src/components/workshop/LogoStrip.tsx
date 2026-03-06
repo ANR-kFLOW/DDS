@@ -19,14 +19,15 @@ const logos = [
 
 export default function LogoStrip() {
   return (
-    <section className="py-8 bg-white/80 overflow-hidden">
+    <section className="py-8 bg-white/80 overflow-hidden" aria-label="Institutional partners and funders">
       <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex shrink-0 gap-10 items-center animate-marquee">
+        <div className="flex shrink-0 gap-10 items-center animate-marquee" role="list" aria-label="Partner institution logos">
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
               className="group flex items-center justify-center h-12 w-32 shrink-0 px-3"
               title={logo.name}
+              role="listitem"
             >
               <img
                 src={logo.src}

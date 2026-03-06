@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="min-h-[calc(100vh-6rem)] flex flex-col justify-center mesh-bg relative overflow-hidden" id="home">
+      <section className="min-h-[calc(100vh-6rem)] flex flex-col justify-center mesh-bg relative overflow-hidden" id="home" aria-labelledby="hero-heading">
         <HeroParticles />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div 
@@ -34,7 +34,7 @@ export default function Home() {
               Workshop at ISWC 2026
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+            <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
               Data-Driven Storytelling
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
                 (DDS 2026)
@@ -70,7 +70,7 @@ export default function Home() {
       <About />
       <Topics />
       
-      <section className="py-24 bg-white relative" id="guidelines">
+      <section className="py-24 bg-white relative" id="guidelines" aria-labelledby="guidelines-heading">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function Home() {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Submission Guidelines</h2>
+              <h2 id="guidelines-heading" className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Submission Guidelines</h2>
               <p className="text-lg text-muted-foreground">We welcome various types of contributions to the workshop.</p>
             </div>
             
@@ -116,10 +116,11 @@ export default function Home() {
                   href="https://www.overleaf.com/latex/templates/template-for-submissions-to-ceur-workshop-proceedings-ceur-ws-dot-org/wqyfdgftmcfw" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
-                  <FileText className="w-4 h-4" />
+                  <FileText className="w-4 h-4" aria-hidden="true" />
                   View LaTeX Template
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
             </div>
@@ -133,8 +134,8 @@ export default function Home() {
             
             <div className="text-center">
               <p className="text-lg mb-6">All papers and abstracts have to be submitted electronically via EasyChair.</p>
-              <a href="#" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-foreground/90 transition-colors text-lg">
-                <Send className="w-5 h-5" />
+              <a href="#" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-foreground/90 transition-colors text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-disabled="true">
+                <Send className="w-5 h-5" aria-hidden="true" />
                 Submit via EasyChair
               </a>
               <p className="mt-4 text-sm text-muted-foreground">Link coming soon</p>
@@ -145,7 +146,7 @@ export default function Home() {
 
       <Dates />
       
-      <section className="py-24 bg-white" id="program">
+      <section className="py-24 bg-white" id="program" aria-labelledby="program-heading">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -154,7 +155,7 @@ export default function Home() {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Workshop Program</h2>
+              <h2 id="program-heading" className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Workshop Program</h2>
               <p className="text-lg text-muted-foreground">Half-day schedule featuring keynotes and paper presentations</p>
             </div>
 

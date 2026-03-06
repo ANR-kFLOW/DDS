@@ -1,10 +1,15 @@
 export default function Footer() {
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      el.setAttribute("tabindex", "-1");
+      el.focus({ preventScroll: true });
+    }
   };
 
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-foreground text-background py-16" role="contentinfo">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
@@ -18,7 +23,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold mb-4 uppercase text-sm tracking-wider text-background/40">Quick Links</h4>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2" role="navigation" aria-label="Footer navigation">
               {[
                 { id: "about", label: "About" },
                 { id: "topics", label: "Topics" },
@@ -30,7 +35,7 @@ export default function Footer() {
                 <button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
-                  className="text-left text-background/60 hover:text-background transition-colors py-1"
+                  className="text-left text-background/60 hover:text-background transition-colors py-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
                 >
                   {link.label}
                 </button>
@@ -45,9 +50,10 @@ export default function Footer() {
                 href="https://iswc2026.semanticweb.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-background/60 hover:text-background transition-colors"
+                className="block text-background/60 hover:text-background transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
               >
                 ISWC 2026
+                <span className="sr-only"> (opens in new tab)</span>
               </a>
               <p className="text-background/60">The Nicolaus Hotel</p>
               <p className="text-background/60">Bari, Italy</p>
