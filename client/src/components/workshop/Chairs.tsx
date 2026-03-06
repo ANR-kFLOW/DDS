@@ -8,7 +8,7 @@ const chairs = [
     institution: "EURECOM, France",
     role: "Researcher",
     image: "https://media.licdn.com/dms/image/v2/C4D03AQH7awdts86HmQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1651052072883?e=2147483647&v=beta&t=JtoGdJi1pvx9vxhA9NyHKRD0HGwjUoVepaaMIKsfNms",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Eurecom_logo.svg/1200px-Eurecom_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Eurecom_logo.svg/512px-Eurecom_logo.svg.png",
     bio: "Researcher in Knowledge Graphs and Information Extraction. PhD in Data Science from Sorbonne University (2019). Co-organiser of SEMMES at ESWC 2023 and 2024.",
     email: "pasquale.lisena@eurecom.fr",
     url: "https://pasqlisena.github.io/"
@@ -18,7 +18,7 @@ const chairs = [
     institution: "University of Salerno, Italy",
     role: "Researcher",
     image: "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=OywXH9wAAAAJ&citpid=1",
-    logo: "https://upload.wikimedia.org/wikipedia/it/thumb/a/a2/Logo_unisa.svg/1200px-Logo_unisa.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/it/thumb/a/a2/Logo_unisa.svg/512px-Logo_unisa.svg.png",
     bio: "Researcher in Knowledge Graphs, Data Quality, and educational approaches. PhD in Computer Science from the University of Salerno in 2022.",
     email: "mapellegrino@unisa.it",
     url: "http://www.mariaangelapellegrino.it/"
@@ -27,8 +27,8 @@ const chairs = [
     name: "Lisa-Yao Gan",
     institution: "Technical University Munich, Germany",
     role: "Researcher",
-    image: "",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png",
+    image: "https://ui-avatars.com/api/?name=Lisa-Yao+Gan&background=2563eb&color=fff&size=256",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/512px-Logo_of_the_Technical_University_of_Munich.svg.png",
     bio: "Researcher exploring how generative AI, grounded in structured KGs, supports dataset discovery and sense-making. Supported by Hans Fischer Senior Fellowship.",
     email: "lisa.gan@tum.de",
     url: "#"
@@ -37,8 +37,8 @@ const chairs = [
     name: "Yihang Zhao",
     institution: "King's College London, UK",
     role: "Researcher",
-    image: "https://lh3.googleusercontent.com/sitesv/APaQ0SQAazv-6clwPzyNP70pjkXoAQ7BmGX7Px4RM3uHZhJKnf36aZJKEKl3NvWZsYV8dhOK5PiAUJU1buARrGJM6EzrqlmWhSRmT7A_ZbkkS8h94D9ARwOcKw3BdFG4u6bsvQOH2ApnEKsRnqczXzjdx5tKh4dYXJOyflzJ5oePckzNT8h_UIQnXVarOcJv6YWPPlagXNtTT0i6bvT_CTT1c-PvCoWheRS0SXtlQ-A=w1280",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/King%27s_College_London_logo.svg/1200px-King%27s_College_London_logo.svg.png",
+    image: "https://avatars.githubusercontent.com/1hangzhao",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/King%27s_College_London_logo.svg/512px-King%27s_College_London_logo.svg.png",
     bio: "Researcher in human-centered AI, studying UI and interaction techniques of GenAI-based systems for knowledge workers. Affiliated with the KG Group at KCL.",
     email: "yihang.zhao@kcl.ac.uk",
     url: "https://www.yihangzhao.com/"
@@ -48,7 +48,7 @@ const chairs = [
     institution: "University of Oxford, UK",
     role: "Researcher",
     image: "https://eavanxing0416.github.io/images/profile.png",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/512px-Oxford-University-Circlet.svg.png",
     bio: "Researcher in data visualization at the Oxford e-Research Centre. Focuses on visual analytics systems supporting sensemaking in complex workflows.",
     email: "yiwen.xing@eng.ox.ac.uk",
     url: "https://eavanxing0416.github.io/"
