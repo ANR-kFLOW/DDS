@@ -2,38 +2,74 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl"
-        >
-          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-primary border-b pb-4">Workshop description</h1>
-          <div className="prose prose-lg text-foreground/80 max-w-none">
-            <p className="lead text-xl mb-6">
+    <section className="py-24 bg-white relative">
+      <div className="absolute inset-0 mesh-bg opacity-30"></div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Workshop Description</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               DDS 2026 aims to explore innovative methods for transforming complex datasets into engaging, interpretable narratives.
             </p>
-            <p className="mb-4">
-              This workshop focuses on the intersection of semantic technologies, artificial intelligence, and narrative design, seeking to make data more relevant, interactive, and shareable. We invite researchers and practitioners from diverse fields—including NLP, knowledge representation, HCI, Information retrieval and creative industries—to discuss frameworks and tools that enhance data engagement through storytelling, games, and art.
-            </p>
-            <p className="mb-8">
-              Key topics include ontological coherence, generative AI, and participatory content creation, with the goal of empowering experts to communicate effectively in domains like education, journalism, and cultural heritage.
-            </p>
-            
-            <h3 className="text-2xl font-bold mt-12 mb-4 text-foreground">Motivation</h3>
-            <p className="mb-4">
-              The rise of Large Language Models (LLMs) has brought both opportunities and challenges in generating coherent, context-aware narratives from complex data. While generative models can produce fluent narratives, they often lack semantic grounding, provenance awareness, and narrative consistency. This workshop is timely as it aims to bridge semantic representations and generative AI, building on established Semantic Web research while addressing current developments in AI.
-            </p>
-            
-            <h3 className="text-2xl font-bold mt-12 mb-4 text-foreground">Audience</h3>
-            <p className="mb-4">
-              The workshop targets researchers and practitioners working on knowledge graphs, semantic technologies, generative AI, and narrative-based data exploration, including members of the ISWC community active in ontology engineering, Linked Data, reasoning, as well as scholars from NLP, HCI, information retrieval, digital humanities, and creative industries.
-            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">The Focus</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We focus on the intersection of semantic technologies, artificial intelligence, and narrative design. We invite researchers from NLP, knowledge representation, HCI, and creative industries to discuss frameworks that enhance data engagement.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Motivation</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                The rise of LLMs brings challenges in generating coherent narratives. While generative models produce fluent text, they often lack semantic grounding. This workshop aims to bridge semantic representations and generative AI.
+              </p>
+            </motion.div>
           </div>
-        </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-8 bg-foreground text-background p-8 md:p-12 rounded-3xl text-center"
+          >
+            <h3 className="text-2xl font-bold mb-4">Target Audience</h3>
+            <p className="text-background/80 leading-relaxed max-w-2xl mx-auto text-lg">
+              Researchers and practitioners working on knowledge graphs, semantic technologies, generative AI, and narrative-based data exploration, including members of the ISWC community and scholars from NLP, HCI, information retrieval, and digital humanities.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
