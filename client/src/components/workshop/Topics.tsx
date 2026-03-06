@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 
 const topics = [
   "Knowledge graphs and ontologies for narrative representation and generation",
@@ -17,30 +16,23 @@ const topics = [
 
 export default function Topics() {
   return (
-    <section className="py-20 bg-secondary/20" id="topics">
+    <section className="py-16 bg-secondary/20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Topics of Interest</h2>
-          <p className="text-muted-foreground text-lg">
-            We welcome submissions on the following topics, but not limited to:
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          {topics.map((topic, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex items-start gap-3 p-4 rounded-xl bg-white border shadow-sm hover:shadow-md transition-shadow"
-            >
-              <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-foreground/90">{topic}</span>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl"
+        >
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-primary border-b pb-4">Topics of interest</h1>
+          <p className="text-lg mb-6">Topics of interest include, but are not limited to:</p>
+          
+          <ul className="list-disc pl-6 space-y-3 text-lg text-foreground/80">
+            {topics.map((topic, index) => (
+              <li key={index}>{topic}</li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </section>
   );
