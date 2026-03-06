@@ -108,15 +108,21 @@
 
 .mesh-bg {
   background-color: var(--background);
-  background-image: radial-gradient(at 40% 20%, hsla(228,100%,74%,0.15) 0px, transparent 50%),
-  radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
-  radial-gradient(at 0% 50%, hsla(355,100%,93%,0.1) 0px, transparent 50%);
+  background-image:
+    radial-gradient(at 15% 15%, hsla(217,100%,60%,0.18) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, hsla(270,80%,65%,0.15) 0px, transparent 45%),
+    radial-gradient(at 60% 80%, hsla(190,100%,50%,0.12) 0px, transparent 50%),
+    radial-gradient(at 5% 70%, hsla(280,90%,70%,0.1) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, hsla(220,100%,70%,0.06) 0px, transparent 60%);
 }
 
 .dark .mesh-bg {
-  background-image: radial-gradient(at 40% 20%, hsla(228,100%,74%,0.08) 0px, transparent 50%),
-  radial-gradient(at 80% 0%, hsla(189,100%,56%,0.06) 0px, transparent 50%),
-  radial-gradient(at 0% 50%, hsla(355,100%,93%,0.04) 0px, transparent 50%);
+  background-image:
+    radial-gradient(at 15% 15%, hsla(217,100%,60%,0.1) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, hsla(270,80%,65%,0.08) 0px, transparent 45%),
+    radial-gradient(at 60% 80%, hsla(190,100%,50%,0.06) 0px, transparent 50%),
+    radial-gradient(at 5% 70%, hsla(280,90%,70%,0.05) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, hsla(220,100%,70%,0.03) 0px, transparent 60%);
 }
 
 @keyframes marquee {
