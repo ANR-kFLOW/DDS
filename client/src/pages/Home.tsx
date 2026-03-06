@@ -125,7 +125,7 @@ export default function Home() {
             <div className="bg-primary/5 border border-primary/20 p-8 rounded-3xl mb-12 text-center">
               <h3 className="text-xl font-bold mb-2">Review Process</h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We'll use single-anonymous review for submissions to encourage follow-up work, demos, and sharing of tools/resources without the overhead of anonymization.
+                We'll use single-anonymous review for submissions.
               </p>
             </div>
             

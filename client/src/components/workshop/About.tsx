@@ -32,9 +32,9 @@ export default function About() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4">The Focus</h3>
+              <h3 className="text-2xl font-bold mb-4">Focus & Audience</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We focus on the intersection of semantic technologies, artificial intelligence, and narrative design. We invite researchers from NLP, knowledge representation, HCI, and creative industries to discuss frameworks that enhance data engagement.
+                We bring together researchers and practitioners at the intersection of semantic technologies, artificial intelligence, and narrative design — from knowledge graphs and NLP to HCI, information retrieval, digital humanities, and creative industries — to discuss frameworks that enhance data engagement.
               </p>
             </motion.div>
 
@@ -56,19 +56,6 @@ export default function About() {
               </p>
             </motion.div>
           </div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-8 bg-foreground text-background p-8 md:p-12 rounded-3xl text-center"
-          >
-            <h3 className="text-2xl font-bold mb-4">Target Audience</h3>
-            <p className="text-background/80 leading-relaxed max-w-2xl mx-auto text-lg">
-              Researchers and practitioners working on knowledge graphs, semantic technologies, generative AI, and narrative-based data exploration, including members of the ISWC community and scholars from NLP, HCI, information retrieval, and digital humanities.
-            </p>
-          </motion.div>
         </div>
       </div>
     </section>
