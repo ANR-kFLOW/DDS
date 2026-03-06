@@ -8,6 +8,7 @@ import Committee from "@/components/workshop/Committee";
 import Venue from "@/components/workshop/Venue";
 import LogoStrip from "@/components/workshop/LogoStrip";
 import HeroParticles from "@/components/workshop/HeroParticles";
+import DDSLogo from "@/components/workshop/DDSLogo";
 
 export default function Home() {
   const schedule = [
@@ -34,11 +35,9 @@ export default function Home() {
               Workshop at ISWC 2026
             </div>
             
-            <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-              Data-Driven Storytelling
-              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
-                (DDS 2026)
-              </span>
+            <h1 id="hero-heading" className="mb-8">
+              <DDSLogo />
+              <span className="sr-only">Data-Driven Storytelling (DDS 2026) — Bridging Knowledge Graphs, GenAI & Narrative</span>
             </h1>
             
             <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-card/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm">
