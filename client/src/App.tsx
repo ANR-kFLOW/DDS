@@ -6,10 +6,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
+import BackToTop from "@/components/layout/BackToTop";
 
 function Router() {
   return (
-    <div className="min-h-screen bg-background pt-16 flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Nav />
       <main className="flex-1">
         <Switch>
@@ -17,12 +19,8 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      <footer className="bg-secondary/50 py-12 border-t mt-auto">
-        <div className="container mx-auto px-4 md:px-6 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} DDS Workshop. All rights reserved.</p>
-          <p className="mt-2 text-sm">Bridging Knowledge Graphs, GenAI, and Narrative</p>
-        </div>
-      </footer>
+      <Footer />
+      <BackToTop />
     </div>
   );
 }

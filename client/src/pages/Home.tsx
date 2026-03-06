@@ -7,6 +7,7 @@ import Chairs from "@/components/workshop/Chairs";
 import Committee from "@/components/workshop/Committee";
 import Venue from "@/components/workshop/Venue";
 import LogoStrip from "@/components/workshop/LogoStrip";
+import HeroParticles from "@/components/workshop/HeroParticles";
 
 export default function Home() {
   const schedule = [
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <div>
       <section className="pt-32 pb-24 md:pt-48 md:pb-32 mesh-bg relative overflow-hidden" id="home">
+        <HeroParticles />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
