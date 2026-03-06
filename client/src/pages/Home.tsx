@@ -30,7 +30,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-5xl mx-auto text-center"
           >
-            <div className="inline-block bg-white border shadow-sm px-6 py-2 rounded-full font-bold text-sm mb-8 text-foreground/80 tracking-wide uppercase">
+            <div className="inline-block bg-card border shadow-sm px-6 py-2 rounded-full font-bold text-sm mb-8 text-foreground/80 tracking-wide uppercase">
               Workshop at ISWC 2026
             </div>
             
@@ -41,7 +41,7 @@ export default function Home() {
               </span>
             </h1>
             
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-white/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-card/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm">
               <div className="flex items-center gap-3 px-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                   <CalendarDays className="w-5 h-5" />
@@ -70,7 +70,7 @@ export default function Home() {
       <About />
       <Topics />
       
-      <section className="py-24 bg-white relative" id="guidelines" aria-labelledby="guidelines-heading">
+      <section className="py-24 bg-background relative" id="guidelines" aria-labelledby="guidelines-heading">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl border shadow-sm flex flex-col justify-center">
+              <div className="bg-card p-8 rounded-3xl border shadow-sm flex flex-col justify-center">
                 <h3 className="text-2xl font-bold mb-4">Formatting</h3>
                 <p className="text-muted-foreground mb-6">
                   Submissions must be written in English and formatted in the CEUR-WS.org proceedings style, single column format.
@@ -146,7 +146,7 @@ export default function Home() {
 
       <Dates />
       
-      <section className="py-24 bg-white" id="program" aria-labelledby="program-heading">
+      <section className="py-24 bg-background" id="program" aria-labelledby="program-heading">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -172,10 +172,10 @@ export default function Home() {
             <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
               {schedule.map((item, index) => (
                 <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-secondary text-muted-foreground shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-secondary text-muted-foreground shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">
                     <item.icon className="w-4 h-4" />
                   </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl border shadow-sm group-hover:shadow-md transition-all">
+                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-card p-6 rounded-2xl border shadow-sm group-hover:shadow-md transition-all">
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-mono text-primary font-bold">{item.duration}</span>
                     </div>

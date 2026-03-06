@@ -19,7 +19,7 @@ const logos = [
 
 export default function LogoStrip() {
   return (
-    <section className="py-8 bg-white/80 overflow-hidden" aria-label="Institutional partners and funders">
+    <section className="py-8 bg-background/80 overflow-hidden" aria-label="Institutional partners and funders">
       <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex shrink-0 gap-10 items-center animate-marquee" role="list" aria-label="Partner institution logos">
           {[...logos, ...logos].map((logo, index) => (

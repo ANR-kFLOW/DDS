@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Mail, ExternalLink } from "lucide-react";
 
 import yihangImage from "@assets/image_1772802483946.png";
 import lisaImage from "@assets/image_1772803601722.png";
@@ -59,9 +60,22 @@ const chairs = [
   }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.12,
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
+
 export default function Chairs() {
   return (
-    <section className="py-24 bg-white" id="organizers">
+    <section className="py-24 bg-background" id="organizers" aria-labelledby="organizers-heading">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -70,25 +84,26 @@ export default function Chairs() {
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Workshop Organizers</h2>
+            <h2 id="organizers-heading" className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Workshop Organizers</h2>
             <p className="text-xl text-muted-foreground">The organizing committee bringing together expertise in semantic web, human-centered AI, visualization, and data-driven storytelling.</p>
           </div>
           
           <div className="space-y-8">
             {chairs.map((chair, index) => (
-              <motion.div 
+              <motion.article 
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative bg-secondary/10 p-6 md:p-8 rounded-3xl border shadow-sm overflow-hidden group"
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={cardVariants}
+                className="relative bg-secondary/10 p-6 md:p-8 rounded-3xl border shadow-sm overflow-hidden group hover:shadow-lg transition-shadow duration-300"
               >
                 {chair.logo && (
-                  <div className="absolute top-5 right-5 md:top-6 md:right-6 w-20 h-12 md:w-28 md:h-14 flex items-start justify-end z-10">
+                  <div className="absolute top-5 right-5 md:top-6 md:right-6 w-20 h-12 md:w-28 md:h-14 flex items-start justify-end z-10" aria-hidden="true">
                     <img 
                       src={chair.logo} 
-                      alt={`${chair.institution} logo`} 
+                      alt="" 
                       className="max-h-full max-w-full object-contain opacity-40 group-hover:opacity-80 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
                     />
                   </div>
@@ -97,8 +112,8 @@ export default function Chairs() {
                 <div className="flex flex-col sm:flex-row gap-6 items-start">
                   <img 
                     src={chair.image} 
-                    alt={chair.name} 
-                    className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-2xl shadow-sm bg-white shrink-0"
+                    alt={`Photo of ${chair.name}`} 
+                    className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-2xl shadow-sm bg-card shrink-0"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(chair.name)}&background=random`;
                     }}
@@ -107,15 +122,26 @@ export default function Chairs() {
                     <h3 className="text-2xl font-bold">{chair.name}</h3>
                     <h4 className="text-lg font-medium text-primary mb-3">{chair.institution}</h4>
                     
-                    <div className="text-sm font-medium mb-4 flex flex-wrap gap-4">
-                      <a href={`mailto:${chair.email}`} className="text-primary hover:underline flex items-center gap-1.5 bg-primary/5 px-3 py-1.5 rounded-full">
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                        Email
+                    <div className="text-sm font-medium mb-4 flex flex-wrap gap-3">
+                      <a
+                        href={`mailto:${chair.email}`}
+                        className="text-primary hover:text-primary/80 flex items-center gap-1.5 bg-primary/5 hover:bg-primary/10 px-3 py-1.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        data-testid={`link-email-${chair.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        <Mail className="w-4 h-4" aria-hidden="true" />
+                        {chair.email}
                       </a>
                       {chair.url && chair.url !== "#" && (
-                        <a href={chair.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1.5 bg-primary/5 px-3 py-1.5 rounded-full">
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        <a
+                          href={chair.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary/80 flex items-center gap-1.5 bg-primary/5 hover:bg-primary/10 px-3 py-1.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                          data-testid={`link-website-${chair.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          <ExternalLink className="w-4 h-4" aria-hidden="true" />
                           Homepage
+                          <span className="sr-only"> (opens in new tab)</span>
                         </a>
                       )}
                     </div>
@@ -125,7 +151,7 @@ export default function Chairs() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </motion.div>

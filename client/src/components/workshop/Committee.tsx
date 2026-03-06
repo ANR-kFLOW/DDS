@@ -22,9 +22,23 @@ const members = [
   { name: "Simon Gottschalk", institution: "Leibniz Universität Hannover, Germany" }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 15, scale: 0.97 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.04,
+      duration: 0.35,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
+
 export default function Committee() {
   return (
-    <section className="py-24 bg-white" id="committee">
+    <section className="py-24 bg-background" id="committee" aria-labelledby="committee-heading">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -33,18 +47,20 @@ export default function Committee() {
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Program Committee</h2>
+            <h2 id="committee-heading" className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Program Committee</h2>
             <p className="text-xl text-muted-foreground">We thank our dedicated program committee members for their support.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4" role="list" aria-label="Program committee members">
             {members.map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-30px" }}
+                variants={cardVariants}
+                role="listitem"
                 className="bg-secondary/20 p-5 rounded-2xl border flex flex-col hover:bg-secondary/40 transition-colors"
               >
                 <span className="font-bold text-lg">{member.name}</span>

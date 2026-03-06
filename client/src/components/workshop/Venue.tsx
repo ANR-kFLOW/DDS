@@ -3,7 +3,7 @@ import { MapPin, ExternalLink } from "lucide-react";
 
 export default function Venue() {
   return (
-    <section className="py-24 bg-white" id="venue">
+    <section className="py-24 bg-background" id="venue">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

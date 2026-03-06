@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
+import { Clock, CalendarPlus } from "lucide-react";
 import { useState, useEffect } from "react";
+import { downloadICS } from "@/lib/calendar";
 
 const dates = [
   { date: "July 24th", isoDate: "2026-07-25T11:59:00Z", event: "Submission deadline", done: false, important: true },
@@ -77,6 +78,51 @@ function CountdownTimer({ isoDate, event }: { isoDate: string | null; event: str
   );
 }
 
+function AddToCalendarButton({ item }: { item: typeof dates[number] }) {
+  if (!item.isoDate) return null;
+
+  const handleClick = () => {
+    if (item.event === "Workshop day") {
+      downloadICS({
+        title: "DDS 2026 Workshop — Data-Driven Storytelling",
+        description: "Data-Driven Storytelling Workshop at ISWC 2026. More info: https://dds2026.github.io",
+        location: "The Nicolaus Hotel, Via Cardinale Agostino Ciasca 27, 70124 Bari, Italy",
+        startDate: "2026-10-25",
+        endDate: "2026-10-26",
+        allDay: true,
+      });
+    } else if (item.event === "Submission deadline") {
+      downloadICS({
+        title: "DDS 2026 — Submission Deadline",
+        description: "Paper submission deadline for DDS 2026 Workshop at ISWC 2026. All deadlines are 23:59 AoE (UTC-12).",
+        location: "",
+        startDate: item.isoDate!,
+        allDay: true,
+      });
+    } else if (item.event === "Notifications") {
+      downloadICS({
+        title: "DDS 2026 — Notification of Acceptance",
+        description: "Notification of acceptance/rejection for DDS 2026 Workshop submissions.",
+        location: "",
+        startDate: item.isoDate!,
+        allDay: true,
+      });
+    }
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded"
+      data-testid={`button-add-calendar-${item.event.toLowerCase().replace(/\s+/g, '-')}`}
+      aria-label={`Add ${item.event} to calendar`}
+    >
+      <CalendarPlus className="w-4 h-4" />
+      Add to Calendar
+    </button>
+  );
+}
+
 export default function Dates() {
   return (
     <section className="py-20 bg-secondary/20 relative overflow-hidden" id="dates" aria-labelledby="dates-heading">
@@ -91,7 +137,7 @@ export default function Dates() {
         >
           <div className="text-center mb-16">
             <h2 id="dates-heading" className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Important Dates</h2>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border shadow-sm text-sm font-medium text-muted-foreground">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-card border shadow-sm text-sm font-medium text-muted-foreground">
               <Clock className="w-4 h-4 text-primary" aria-hidden="true" />
               All deadlines are 23:59 anywhere on earth (UTC-12).
             </div>
@@ -106,13 +152,14 @@ export default function Dates() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 role="listitem"
-                className={`flex flex-col p-6 rounded-2xl border ${item.important ? 'bg-primary/5 border-primary/20 shadow-sm' : 'bg-white shadow-sm hover:shadow-md transition-shadow'}`}
+                className={`flex flex-col p-6 rounded-2xl border ${item.important ? 'bg-primary/5 border-primary/20 shadow-sm' : 'bg-white dark:bg-card shadow-sm hover:shadow-md transition-shadow'}`}
               >
                 <span className="text-muted-foreground font-medium mb-2 text-sm uppercase tracking-wider">{item.event}</span>
                 <span className={`text-xl md:text-2xl ${item.important ? 'font-bold text-primary' : 'font-semibold text-foreground'}`}>
                   <time dateTime={item.isoDate || undefined}>{item.date}</time>
                 </span>
                 <CountdownTimer isoDate={item.isoDate} event={item.event} />
+                <AddToCalendarButton item={item} />
               </motion.div>
             ))}
           </div>

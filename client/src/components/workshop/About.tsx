@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="py-24 bg-white relative" id="about" aria-labelledby="about-heading">
+    <section className="py-24 bg-background relative" id="about" aria-labelledby="about-heading">
       <div className="absolute inset-0 mesh-bg opacity-30" aria-hidden="true"></div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -25,7 +25,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center mb-6" aria-hidden="true">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +43,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6" aria-hidden="true">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
