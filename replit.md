@@ -14,6 +14,7 @@ Static single-page workshop website for "Data-Driven Storytelling: Bridging Know
 - `client/src/components/layout/Nav.tsx` — Fixed glassmorphism navigation with dark mode toggle, font sizing, active section tracking, mobile menu
 - `client/src/components/layout/Footer.tsx` — Full footer with quick links, conference info
 - `client/src/components/layout/BackToTop.tsx` — Floating back-to-top button
+- `client/src/components/layout/ReadAloud.tsx` — Text-to-speech panel using Web Speech API with section nav, controls, speed/voice selection
 - `client/src/hooks/useTheme.ts` — Dark mode hook with localStorage persistence
 - `client/src/hooks/useFontSize.ts` — Font size scaling hook (100%/112%/125%) with localStorage
 - `client/src/lib/calendar.ts` — ICS calendar file generation and download utility
@@ -35,7 +36,8 @@ Static single-page workshop website for "Data-Driven Storytelling: Bridging Know
 - Scroll progress bar at top
 - Active section highlighting in nav with visited section dots
 - Mobile hamburger menu with focus trap and keyboard navigation
-- Animated floating shapes in hero background (respects prefers-reduced-motion)
+- Data-driven storytelling hero background (knowledge graphs, bar charts, scatter plots, pie charts, documents, flow arrows — respects prefers-reduced-motion)
+- Read Aloud accessibility feature (Web Speech API text-to-speech with section navigation, play/pause/stop/skip, speed control, voice selection, aria-live status)
 - Back-to-top button
 - Print-friendly stylesheet
 - Institutional logo marquee strip (EURECOM, U. Salerno, TUM, KCL, Oxford, kFLOW, ANR, Siemens, EPSRC)
