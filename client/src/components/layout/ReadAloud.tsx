@@ -286,24 +286,6 @@ export default function ReadAloud() {
                 />
               </div>
 
-              {voices.length > 1 && (
-                <div>
-                  <div className="text-xs font-medium text-muted-foreground mb-1">Voice</div>
-                  <select
-                    value={selectedVoice}
-                    onChange={(e) => setSelectedVoice(e.target.value)}
-                    className="w-full appearance-none bg-secondary/50 border rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    data-testid="select-read-voice"
-                    aria-label="Select reading voice"
-                  >
-                    {voices.map((v) => (
-                      <option key={v.name} value={v.name}>
-                        {v.name} ({v.lang})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              )}
             </div>
           </motion.div>
         )}
