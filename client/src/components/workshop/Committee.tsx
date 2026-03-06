@@ -24,23 +24,34 @@ const members = [
 
 export default function Committee() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-24 bg-white" id="committee">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl"
+          className="max-w-4xl mx-auto"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-primary border-b pb-4">Program Committee</h1>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Program Committee</h2>
+            <p className="text-xl text-muted-foreground">We thank our dedicated program committee members for their support.</p>
+          </div>
           
-          <ul className="list-disc pl-6 space-y-2 text-lg text-foreground/80">
+          <div className="grid md:grid-cols-2 gap-4">
             {members.map((member, index) => (
-              <li key={index}>
-                {member.name}, {member.institution}
-              </li>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="bg-secondary/20 p-5 rounded-2xl border flex flex-col hover:bg-secondary/40 transition-colors"
+              >
+                <span className="font-bold text-lg">{member.name}</span>
+                <span className="text-muted-foreground">{member.institution}</span>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </motion.div>
       </div>
     </section>

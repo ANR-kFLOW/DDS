@@ -4,12 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
-
-import Nav from "@/components/layout/Nav";
 import Home from "@/pages/Home";
-import CallForPapers from "@/pages/CallForPapers";
-import Organizers from "@/pages/Organizers";
-import Program from "@/pages/Program";
+import Nav from "@/components/layout/Nav";
 
 function Router() {
   return (
@@ -18,9 +14,6 @@ function Router() {
       <main className="flex-1">
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/call" component={CallForPapers} />
-          <Route path="/organizers" component={Organizers} />
-          <Route path="/program" component={Program} />
           <Route component={NotFound} />
         </Switch>
       </main>

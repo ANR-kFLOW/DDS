@@ -1,39 +1,59 @@
 import { motion } from "framer-motion";
-import { CalendarDays, MapPin } from "lucide-react";
+import { CalendarDays, MapPin, FileText, Send, Clock, Coffee, Presentation } from "lucide-react";
 import About from "@/components/workshop/About";
 import Dates from "@/components/workshop/Dates";
+import Topics from "@/components/workshop/Topics";
+import Chairs from "@/components/workshop/Chairs";
+import Committee from "@/components/workshop/Committee";
 
 export default function Home() {
+  const schedule = [
+    { time: "9:00", duration: "10'", title: "Workshop welcome and introduction", type: "intro", icon: Presentation },
+    { time: "9:10", duration: "30'", title: "Keynote / Invited talk", speaker: "Speaker TBA", type: "keynote", icon: Presentation },
+    { time: "9:40", duration: "1h", title: "Paper presentations", type: "paper", icon: FileText },
+    { time: "10:40", duration: "30'", title: "Coffee break", type: "break", icon: Coffee },
+    { time: "11:10", duration: "1h", title: "Paper presentations", type: "paper", icon: FileText },
+    { time: "12:10", duration: "10'", title: "Wrap up", type: "end", icon: Clock },
+  ];
+
   return (
     <div>
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24 mesh-bg relative overflow-hidden">
+      <section className="pt-32 pb-24 md:pt-48 md:pb-32 mesh-bg relative overflow-hidden" id="home">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl"
+            className="max-w-5xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            <div className="inline-block bg-white border shadow-sm px-6 py-2 rounded-full font-bold text-sm mb-8 text-foreground/80 tracking-wide uppercase">
+              Workshop at ISWC 2026
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
               Data-Driven Storytelling
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">
                 (DDS 2026)
               </span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-foreground font-medium mb-8">
-              Workshop at <a href="#" className="text-primary hover:underline">ISWC 2026</a>
-            </h2>
             
-            <div className="flex flex-wrap gap-6 text-muted-foreground bg-white/60 backdrop-blur-sm p-6 rounded-2xl border w-fit">
-              <div className="flex items-center gap-3">
-                <CalendarDays className="w-6 h-6 text-primary" />
-                <span className="font-medium text-lg text-foreground">October 25-26, 2026</span>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-white/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm">
+              <div className="flex items-center gap-3 px-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <CalendarDays className="w-5 h-5" />
+                </div>
+                <div className="text-left">
+                  <span className="font-bold text-foreground block">October 25-26, 2026</span>
+                  <span className="text-sm">Workshop Dates</span>
+                </div>
               </div>
               <div className="w-px bg-border hidden sm:block"></div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-6 h-6 text-primary" />
-                <div className="flex flex-col">
-                  <span className="font-medium text-foreground">Bari, Italy</span>
+              <div className="flex items-center gap-3 px-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div className="text-left">
+                  <span className="font-bold text-foreground block">Bari, Italy</span>
                   <span className="text-sm">The Nicolaus Hotel</span>
                 </div>
               </div>
@@ -43,7 +63,132 @@ export default function Home() {
       </section>
 
       <About />
+      <Topics />
+      
+      <section className="py-24 bg-white relative" id="guidelines">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Submission Guidelines</h2>
+              <p className="text-lg text-muted-foreground">We welcome various types of contributions to the workshop.</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-secondary/20 p-8 rounded-3xl border border-secondary">
+                <h3 className="text-2xl font-bold mb-4">Paper Types</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+                    <div>
+                      <span className="font-bold block text-lg">Long papers</span>
+                      <span className="text-muted-foreground">10-15 pages including references</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+                    <div>
+                      <span className="font-bold block text-lg">Short papers</span>
+                      <span className="text-muted-foreground">5-9 pages including references</span>
+                    </div>
+                  </li>
+                </ul>
+                <p className="mt-6 text-muted-foreground">
+                  We welcome any types of research, resource and application papers, as well as (short only) demonstration submissions.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-3xl border shadow-sm flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-4">Formatting</h3>
+                <p className="text-muted-foreground mb-6">
+                  Submissions must be written in English and formatted in the CEUR-WS.org proceedings style, single column format.
+                </p>
+                <a 
+                  href="https://www.overleaf.com/latex/templates/template-for-submissions-to-ceur-workshop-proceedings-ceur-ws-dot-org/wqyfdgftmcfw" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto"
+                >
+                  <FileText className="w-4 h-4" />
+                  View LaTeX Template
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-primary/5 border border-primary/20 p-8 rounded-3xl mb-12 text-center">
+              <h3 className="text-xl font-bold mb-2">Review Process</h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                We'll use single-anonymous review for submissions to encourage follow-up work, demos, and sharing of tools/resources without the overhead of anonymization.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-lg mb-6">All papers and abstracts have to be submitted electronically via EasyChair.</p>
+              <a href="#" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-foreground/90 transition-colors text-lg">
+                <Send className="w-5 h-5" />
+                Submit via EasyChair
+              </a>
+              <p className="mt-4 text-sm text-muted-foreground">Link coming soon</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Dates />
+      
+      <section className="py-24 bg-white" id="program">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Workshop Program</h2>
+              <p className="text-lg text-muted-foreground">Half-day schedule featuring keynotes and paper presentations</p>
+            </div>
+
+            <div className="bg-secondary/10 rounded-3xl p-8 border shadow-sm mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">Proceedings</h3>
+                <p className="text-muted-foreground">The complete set of papers will be published with the joint CEUR ESWC Workshop Proceedings, listed by the DBLP.</p>
+              </div>
+              <a href="#" className="px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full hover:bg-secondary/80 transition-colors pointer-events-none opacity-50 shrink-0">
+                Link Available Soon
+              </a>
+            </div>
+
+            <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
+              {schedule.map((item, index) => (
+                <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-secondary text-muted-foreground shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">
+                    <item.icon className="w-4 h-4" />
+                  </div>
+                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl border shadow-sm group-hover:shadow-md transition-all">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-mono text-primary font-bold">{item.duration}</span>
+                    </div>
+                    <h3 className={`text-xl font-bold ${item.type === 'break' ? 'text-muted-foreground' : 'text-foreground'}`}>
+                      {item.title}
+                    </h3>
+                    {item.speaker && (
+                      <p className="text-muted-foreground mt-2 italic">{item.speaker}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <Chairs />
+      <Committee />
     </div>
   );
 }

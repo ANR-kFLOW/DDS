@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { CheckCircle2 } from "lucide-react";
 
 const topics = [
   "Knowledge graphs and ontologies for narrative representation and generation",
@@ -16,22 +17,36 @@ const topics = [
 
 export default function Topics() {
   return (
-    <section className="py-16 bg-secondary/20">
+    <section className="py-24 bg-secondary/20" id="topics">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl"
+          className="max-w-4xl mx-auto"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-primary border-b pb-4">Topics of interest</h1>
-          <p className="text-lg mb-6">Topics of interest include, but are not limited to:</p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Topics of Interest</h2>
+            <p className="text-xl text-muted-foreground">Topics of interest include, but are not limited to:</p>
+          </div>
           
-          <ul className="list-disc pl-6 space-y-3 text-lg text-foreground/80">
+          <div className="grid md:grid-cols-2 gap-4">
             {topics.map((topic, index) => (
-              <li key={index}>{topic}</li>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="flex items-start gap-4 p-6 rounded-2xl bg-white border shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="bg-primary/10 p-1.5 rounded-full shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-foreground/90 text-lg leading-snug">{topic}</span>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </motion.div>
       </div>
     </section>
