@@ -91,14 +91,14 @@ export default function Home() {
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
                     <div>
                       <span className="font-bold block text-lg">Long papers</span>
-                      <span className="text-muted-foreground">10-15 pages including references</span>
+                      <span className="text-muted-foreground">9-14 pages including references</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
                     <div>
                       <span className="font-bold block text-lg">Short papers</span>
-                      <span className="text-muted-foreground">5-9 pages including references</span>
+                      <span className="text-muted-foreground">4-8 pages including references</span>
                     </div>
                   </li>
                 </ul>
