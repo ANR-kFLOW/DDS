@@ -2,13 +2,18 @@ import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ExternalLink, Mail } from "lucide-react";
 
+import yihangImage from "@assets/image_1772802483946.png";
+import eurecomLogo from "@assets/image_1772802507283.png";
+import salernoLogo from "@assets/image_1772802524655.png";
+import kclLogo from "@assets/image_1772802561236.png";
+
 const chairs = [
   {
     name: "Pasquale Lisena",
     institution: "EURECOM, France",
     role: "Researcher",
     image: "https://media.licdn.com/dms/image/v2/C4D03AQH7awdts86HmQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1651052072883?e=2147483647&v=beta&t=JtoGdJi1pvx9vxhA9NyHKRD0HGwjUoVepaaMIKsfNms",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Eurecom_logo.svg/1200px-Eurecom_logo.svg.png",
+    logo: eurecomLogo,
     bio: "Researcher in Knowledge Graphs and Information Extraction. PhD in Data Science from Sorbonne University (2019). Co-organiser of SEMMES at ESWC 2023 and 2024.",
     email: "pasquale.lisena@eurecom.fr",
     url: "https://pasqlisena.github.io/"
@@ -18,7 +23,7 @@ const chairs = [
     institution: "University of Salerno, Italy",
     role: "Researcher",
     image: "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=OywXH9wAAAAJ&citpid=1",
-    logo: "https://upload.wikimedia.org/wikipedia/it/thumb/a/a2/Logo_unisa.svg/1200px-Logo_unisa.svg.png",
+    logo: salernoLogo,
     bio: "Researcher in Knowledge Graphs, Data Quality, and educational approaches. PhD in Computer Science from the University of Salerno in 2022.",
     email: "mapellegrino@unisa.it",
     url: "http://www.mariaangelapellegrino.it/"
@@ -27,18 +32,18 @@ const chairs = [
     name: "Lisa-Yao Gan",
     institution: "Technical University Munich, Germany",
     role: "Researcher",
-    image: "",
+    image: "https://www.ce.cit.tum.de/fileadmin/_processed_/b/b/csm_DSC_0352_607f8144f8.webp",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png",
     bio: "Researcher exploring how generative AI, grounded in structured KGs, supports dataset discovery and sense-making. Supported by Hans Fischer Senior Fellowship.",
     email: "lisa.gan@tum.de",
-    url: "#"
+    url: "https://www.ce.cit.tum.de/en/ldv/team/wissenschaftliche-mitarbeiter/lisa-gan/"
   },
   {
     name: "Yihang Zhao",
     institution: "King's College London, UK",
     role: "Researcher",
-    image: "https://lh3.googleusercontent.com/sitesv/APaQ0SQAazv-6clwPzyNP70pjkXoAQ7BmGX7Px4RM3uHZhJKnf36aZJKEKl3NvWZsYV8dhOK5PiAUJU1buARrGJM6EzrqlmWhSRmT7A_ZbkkS8h94D9ARwOcKw3BdFG4u6bsvQOH2ApnEKsRnqczXzjdx5tKh4dYXJOyflzJ5oePckzNT8h_UIQnXVarOcJv6YWPPlagXNtTT0i6bvT_CTT1c-PvCoWheRS0SXtlQ-A=w1280",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/King%27s_College_London_logo.svg/1200px-King%27s_College_London_logo.svg.png",
+    image: yihangImage,
+    logo: kclLogo,
     bio: "Researcher in human-centered AI, studying UI and interaction techniques of GenAI-based systems for knowledge workers. Affiliated with the KG Group at KCL.",
     email: "yihang.zhao@kcl.ac.uk",
     url: "https://www.yihangzhao.com/"

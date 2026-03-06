@@ -31,7 +31,10 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-primary" />
-              <span className="font-medium">Co-located with ISWC 2026</span>
+              <div className="flex flex-col">
+                <span className="font-medium">Co-located with ISWC 2026: Bari, Italy</span>
+                <span className="text-sm">Venue: The Nicolaus Hotel, Bari</span>
+              </div>
             </div>
           </div>
         </motion.div>
