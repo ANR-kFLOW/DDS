@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="min-h-screen flex flex-col justify-center mesh-bg relative overflow-hidden" id="home">
+      <section className="pt-32 pb-24 md:pt-48 md:pb-32 mesh-bg relative overflow-hidden" id="home">
         <HeroParticles />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <motion.div 
