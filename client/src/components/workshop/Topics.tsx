@@ -83,7 +83,7 @@ export default function Topics() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 layout
-                className="flex items-start gap-4 p-6 rounded-2xl bg-white dark:bg-card border shadow-sm hover:shadow-md transition-shadow"
+                className="flex items-start gap-4 p-6 rounded-2xl bg-card border shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="bg-primary/10 p-1.5 rounded-full shrink-0 mt-0.5" aria-hidden="true">
                   <CheckCircle2 className="w-5 h-5 text-primary" />

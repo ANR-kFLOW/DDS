@@ -125,6 +125,12 @@
     radial-gradient(at 50% 50%, hsla(220,100%,70%,0.03) 0px, transparent 60%);
 }
 
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
