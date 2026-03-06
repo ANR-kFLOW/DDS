@@ -19,7 +19,7 @@ const logos = [
 
 export default function LogoStrip() {
   return (
-    <section className="py-8 bg-white/80 border-b overflow-hidden">
+    <section className="py-8 bg-white/80 overflow-hidden">
       <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex shrink-0 gap-10 items-center animate-marquee">
           {[...logos, ...logos].map((logo, index) => (
