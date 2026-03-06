@@ -5,6 +5,7 @@ import Dates from "@/components/workshop/Dates";
 import Topics from "@/components/workshop/Topics";
 import Chairs from "@/components/workshop/Chairs";
 import Committee from "@/components/workshop/Committee";
+import Venue from "@/components/workshop/Venue";
 
 export default function Home() {
   const schedule = [
@@ -187,6 +188,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Venue />
       <Chairs />
       <Committee />
     </div>

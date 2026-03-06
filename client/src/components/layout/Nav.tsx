@@ -13,6 +13,7 @@ export default function Nav() {
     { id: "guidelines", label: "Submission" },
     { id: "dates", label: "Dates" },
     { id: "program", label: "Program" },
+    { id: "venue", label: "Venue" },
     { id: "organizers", label: "Organizers" },
   ];
 
