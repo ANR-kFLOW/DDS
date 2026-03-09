@@ -64,11 +64,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <LogoStrip />
       <About />
       <Topics />
-      
       <section className="py-24 bg-background relative" id="guidelines" aria-labelledby="guidelines-heading">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -142,9 +140,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <Dates />
-      
       <section className="py-24 bg-background" id="program" aria-labelledby="program-heading">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -161,7 +157,7 @@ export default function Home() {
             <div className="bg-secondary/10 rounded-3xl p-8 border shadow-sm mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">Proceedings</h3>
-                <p className="text-muted-foreground">The complete set of papers will be published with the joint CEUR ESWC Workshop Proceedings, listed by the DBLP.</p>
+                <p className="text-muted-foreground">The complete set of papers will be published with the joint CEUR ISWC Workshop Proceedings, listed by the DBLP.</p>
               </div>
               <a href="#" className="px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full hover:bg-secondary/80 transition-colors pointer-events-none opacity-50 shrink-0">
                 Link Available Soon
@@ -191,7 +187,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <Venue />
       <Chairs />
       <Committee />
