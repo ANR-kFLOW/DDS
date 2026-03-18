@@ -6,7 +6,7 @@ import { downloadICS } from "@/lib/calendar";
 const dates = [
   { date: "July 24th", isoDate: "2026-07-25T11:59:00Z", event: "Submission deadline", done: false, important: true },
   { date: "August 21st", isoDate: "2026-08-22T11:59:00Z", event: "Notifications", done: false },
-  { date: "TBA", isoDate: null, event: "Camera-ready version", done: false },
+  { date: "September 18th", isoDate: "2026-09-19T11:59:00Z", event: "Camera-ready version", done: false },
   { date: "October 25-26", isoDate: "2026-10-25T08:00:00Z", event: "Workshop day", done: false, important: true },
 ];
 
@@ -103,6 +103,14 @@ function AddToCalendarButton({ item }: { item: typeof dates[number] }) {
       downloadICS({
         title: "DDS 2026 — Notification of Acceptance",
         description: "Notification of acceptance/rejection for DDS 2026 Workshop submissions.",
+        location: "",
+        startDate: item.isoDate!,
+        allDay: true,
+      });
+    } else if (item.event === "Camera-ready version") {
+      downloadICS({
+        title: "DDS 2026 — Camera-ready Deadline",
+        description: "Camera-ready paper deadline for DDS 2026 Workshop at ISWC 2026. All deadlines are 23:59 AoE (UTC-12).",
         location: "",
         startDate: item.isoDate!,
         allDay: true,
