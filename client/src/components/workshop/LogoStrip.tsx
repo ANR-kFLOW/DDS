@@ -5,7 +5,9 @@ import kflowLogo from "@assets/image_1772805162290.png";
 import anrLogo from "@assets/image_1772805389810.png";
 import epsrcLogo from "@assets/image_1772805461761.png";
 
-const logos = [
+type Logo = { name: string; src: string; href?: string };
+
+const logos: Logo[] = [
   { name: "EURECOM", src: eurecomLogo, href: "https://www.eurecom.fr/en" },
   { name: "University of Salerno", src: salernoLogo, href: "https://www.unisa.it/" },
   {
@@ -29,6 +31,25 @@ const logos = [
   { name: "EPSRC", src: epsrcLogo, href: "https://www.ukri.org/councils/epsrc/" },
 ];
 
+function LogoItem({ logo }: { logo: Logo }) {
+  const img = (
+    <img
+      src={logo.src}
+      alt={logo.name}
+      className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
+      loading="lazy"
+    />
+  );
+  if (logo.href) {
+    return (
+      <a href={logo.href} target="_blank" rel="noopener noreferrer" className="block">
+        {img}
+      </a>
+    );
+  }
+  return img;
+}
+
 export default function LogoStrip() {
   return (
     <section
@@ -41,32 +62,16 @@ export default function LogoStrip() {
           role="list"
           aria-label="Partner institution logos"
         >
-          {[...logos, ...logos].map((logo, index) => {
-            const imgEl = (
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
-                loading="lazy"
-              />
-            );
-            return (
-              <div
-                key={index}
-                className="group flex items-center justify-center h-12 w-32 shrink-0 px-3"
-                title={logo.name}
-                role="listitem"
-              >
-                {logo.href ? (
-                  <a href={logo.href} target="_blank" rel="noopener noreferrer" className="block">
-                    {imgEl}
-                  </a>
-                ) : (
-                  imgEl
-                )}
-              </div>
-            );
-          })}
+          {[...logos, ...logos].map((logo, index) => (
+            <div
+              key={index}
+              className="group flex items-center justify-center h-12 w-32 shrink-0 px-3"
+              title={logo.name}
+              role="listitem"
+            >
+              <LogoItem logo={logo} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

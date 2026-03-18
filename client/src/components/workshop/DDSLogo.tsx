@@ -220,25 +220,17 @@ export default function DDSLogo() {
             />
           ))}
 
-          <motion.text
-            x="350"
-            y="200"
-            textAnchor="middle"
-            style={{ fontSize: "13px", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.25em" }}
-            fill="currentColor"
-            className="text-muted-foreground"
-            variants={subtitleReveal}
-          >
-            BRIDGING KNOWLEDGE GRAPHS, GENAI & NARRATIVE
-          </motion.text>
         </motion.svg>
       </motion.div>
+
       <motion.p
-        className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl text-center leading-relaxed"
-        initial={{ opacity: 0, y: 15 }}
+        className="text-sm md:text-base font-semibold tracking-[0.22em] uppercase text-center text-foreground/60"
+        initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 0.8 }}
-      >Data-Driven Storytelling Workshop</motion.p>
+        transition={{ delay: 1.6, duration: 0.8 }}
+      >
+        Bridging Knowledge Graphs, GenAI &amp; Narrative
+      </motion.p>
     </div>
   );
 }
