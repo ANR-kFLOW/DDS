@@ -1,8 +1,6 @@
 import eurecomLogo from "@assets/image_1772802507283.png";
 import salernoLogo from "@assets/image_1772802524655.png";
 import kclLogo from "@assets/image_1772802561236.png";
-import kflowLogo from "@assets/image_1772805162290.png";
-import anrLogo from "@assets/image_1772805389810.png";
 import epsrcLogo from "@assets/image_1772805461761.png";
 
 type Logo = { name: string; src: string; href?: string };
@@ -13,8 +11,6 @@ const logos: Logo[] = [
   { name: "Technical University of Munich", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png", href: "https://www.tum.de/en/" },
   { name: "King's College London", src: kclLogo, href: "https://www.kcl.ac.uk/" },
   { name: "University of Oxford", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png", href: "https://www.ox.ac.uk/" },
-  { name: "kFLOW", src: kflowLogo },
-  { name: "ANR", src: anrLogo },
   { name: "Siemens", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1200px-Siemens-logo.svg.png", href: "https://www.siemens.com/global/en.html" },
   { name: "EPSRC", src: epsrcLogo, href: "https://www.ukri.org/councils/epsrc/" },
 ];
