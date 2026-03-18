@@ -35,10 +35,14 @@ export default function Home() {
               Workshop at <a href="https://iswc2026.semanticweb.org/">ISWC 2026</a>
             </div>
             
-            <h1 id="hero-heading" className="mb-8">
+            <h1 id="hero-heading" className="mb-4">
               <DDSLogo />
               <span className="sr-only">Data-Driven Storytelling (DDS 2026) — Bridging Knowledge Graphs, GenAI & Narrative</span>
             </h1>
+
+            <p className="text-2xl md:text-3xl font-bold text-foreground mb-8 tracking-tight">
+              Data-Driven Storytelling Workshop
+            </p>
             
             <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-card/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm">
               <div className="flex items-center gap-3 px-4">
