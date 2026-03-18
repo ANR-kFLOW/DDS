@@ -164,7 +164,7 @@ export default function Home() {
             <div className="bg-secondary/10 rounded-3xl p-8 border shadow-sm mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">Proceedings</h3>
-                <p className="text-muted-foreground">The complete set of papers will be published with the joint CEUR ISWC Workshop Proceedings, listed by the DBLP.</p>
+                <p className="text-muted-foreground">Accepted papers will be published in CEUR Workshop Proceedings, in line with ISWC workshop practices and applicable publication requirements.</p>
               </div>
               <a href="#" className="px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full hover:bg-secondary/80 transition-colors pointer-events-none opacity-50 shrink-0">
                 Link Available Soon
