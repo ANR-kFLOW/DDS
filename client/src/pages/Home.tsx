@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CalendarDays, MapPin, FileText, Send, Clock, Coffee, Presentation } from "lucide-react";
+import { CalendarDays, MapPin, Send } from "lucide-react";
 import About from "@/components/workshop/About";
 import Dates from "@/components/workshop/Dates";
 import Topics from "@/components/workshop/Topics";
@@ -11,15 +11,6 @@ import HeroParticles from "@/components/workshop/HeroParticles";
 import DDSLogo from "@/components/workshop/DDSLogo";
 
 export default function Home() {
-  const schedule = [
-    { time: "9:00", duration: "10'", title: "Workshop welcome and introduction", type: "intro", icon: Presentation },
-    { time: "9:10", duration: "30'", title: "Keynote / Invited talk", speaker: "Speaker TBA", type: "keynote", icon: Presentation },
-    { time: "9:40", duration: "1h", title: "Paper presentations", type: "paper", icon: FileText },
-    { time: "10:40", duration: "30'", title: "Coffee break", type: "break", icon: Coffee },
-    { time: "11:10", duration: "1h", title: "Paper presentations", type: "paper", icon: FileText },
-    { time: "12:10", duration: "10'", title: "Wrap up", type: "end", icon: Clock },
-  ];
-
   return (
     <div>
       <section className="min-h-[calc(100vh-6rem)] flex flex-col justify-center mesh-bg relative overflow-hidden" id="home" aria-labelledby="hero-heading">
@@ -175,25 +166,9 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
-              {schedule.map((item, index) => (
-                <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-secondary text-muted-foreground shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">
-                    <item.icon className="w-4 h-4" />
-                  </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-card p-6 rounded-2xl border shadow-sm group-hover:shadow-md transition-all">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-mono text-primary font-bold">{item.duration}</span>
-                    </div>
-                    <h3 className={`text-xl font-bold ${item.type === 'break' ? 'text-muted-foreground' : 'text-foreground'}`}>
-                      {item.title}
-                    </h3>
-                    {item.speaker && (
-                      <p className="text-muted-foreground mt-2 italic">{item.speaker}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+            <div className="text-center py-12 text-muted-foreground">
+              <p className="text-xl font-semibold">Program to be announced</p>
+              <p className="mt-2 text-sm">Details will be published closer to the workshop date.</p>
             </div>
           </motion.div>
         </div>
