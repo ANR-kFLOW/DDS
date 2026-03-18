@@ -65,6 +65,17 @@ export default function Home() {
         </div>
       </section>
       <LogoStrip />
+      <div className="text-center py-6 pb-0">
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground"
+        >
+          Data-Driven Storytelling Workshop
+        </motion.h2>
+      </div>
       <About />
       <Topics />
       <section className="py-24 bg-background relative" id="guidelines" aria-labelledby="guidelines-heading">
