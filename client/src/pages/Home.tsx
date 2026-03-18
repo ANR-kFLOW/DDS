@@ -32,7 +32,7 @@ export default function Home() {
             className="max-w-5xl mx-auto text-center"
           >
             <div className="inline-block bg-card border shadow-sm px-6 py-2 rounded-full font-bold text-sm mb-8 text-foreground/80 tracking-wide uppercase">
-              Workshop at <a href="https://iswc2026.semanticweb.org/" className="text-[#7f40ef]">ISWC 2026</a>
+              Workshop at <a href="https://iswc2026.semanticweb.org/">ISWC 2026</a>
             </div>
             
             <h1 id="hero-heading" className="mb-8">

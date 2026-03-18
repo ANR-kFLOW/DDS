@@ -6,22 +6,38 @@ import anrLogo from "@assets/image_1772805389810.png";
 import epsrcLogo from "@assets/image_1772805461761.png";
 
 const logos = [
-  { name: "EURECOM", src: eurecomLogo },
+  { name: "EURECOM", src: eurecomLogo, href: "https://www.eurecom.fr/en" },
   { name: "University of Salerno", src: salernoLogo },
-  { name: "Technical University of Munich", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png" },
-  { name: "King's College London", src: kclLogo },
-  { name: "University of Oxford", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png" },
-  { name: "kFLOW", src: kflowLogo },
-  { name: "ANR", src: anrLogo },
-  { name: "Siemens", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1200px-Siemens-logo.svg.png" },
+  {
+    name: "Technical University of Munich",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png",
+  },
+  { name: "King's College London", src: kclLogo, href: "https://www.kcl.ac.uk/" },
+  {
+    name: "University of Oxford",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png",
+  },
+  // { name: "kFLOW", src: kflowLogo },
+  // { name: "ANR", src: anrLogo },
+  {
+    name: "Siemens",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1200px-Siemens-logo.svg.png",
+  },
   { name: "EPSRC", src: epsrcLogo },
 ];
 
 export default function LogoStrip() {
   return (
-    <section className="py-8 bg-background/80 overflow-hidden" aria-label="Institutional partners and funders">
+    <section
+      className="py-8 bg-background/80 overflow-hidden"
+      aria-label="Institutional partners and funders"
+    >
       <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex shrink-0 gap-10 items-center animate-marquee" role="list" aria-label="Partner institution logos">
+        <div
+          className="flex shrink-0 gap-10 items-center animate-marquee"
+          role="list"
+          aria-label="Partner institution logos"
+        >
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
@@ -29,12 +45,20 @@ export default function LogoStrip() {
               title={logo.name}
               role="listitem"
             >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
-                loading="lazy"
-              />
+              {" "}
+              <a
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display:block"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
+                  loading="lazy"
+                />
+              </a>
             </div>
           ))}
         </div>
