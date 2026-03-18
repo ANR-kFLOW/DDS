@@ -121,14 +121,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            
-            <div className="bg-primary/5 border border-primary/20 p-8 rounded-3xl mb-12 text-center">
-              <h3 className="text-xl font-bold mb-2">Review Process</h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We'll use single-anonymous review for submissions.
-              </p>
-            </div>
-            
+
             <div className="text-center">
               <p className="text-lg mb-6">All papers and abstracts have to be submitted electronically via EasyChair.</p>
               <a href="#" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-foreground/90 transition-colors text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-disabled="true">
