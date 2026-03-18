@@ -7,23 +7,26 @@ import epsrcLogo from "@assets/image_1772805461761.png";
 
 const logos = [
   { name: "EURECOM", src: eurecomLogo, href: "https://www.eurecom.fr/en" },
-  { name: "University of Salerno", src: salernoLogo },
+  { name: "University of Salerno", src: salernoLogo, href: "https://www.unisa.it/" },
   {
     name: "Technical University of Munich",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png",
+    href: "https://www.tum.de/en/",
   },
   { name: "King's College London", src: kclLogo, href: "https://www.kcl.ac.uk/" },
   {
     name: "University of Oxford",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png",
+    href: "https://www.ox.ac.uk/",
   },
-  // { name: "kFLOW", src: kflowLogo },
-  // { name: "ANR", src: anrLogo },
+  { name: "kFLOW", src: kflowLogo },
+  { name: "ANR", src: anrLogo },
   {
     name: "Siemens",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1200px-Siemens-logo.svg.png",
+    href: "https://www.siemens.com/global/en.html",
   },
-  { name: "EPSRC", src: epsrcLogo },
+  { name: "EPSRC", src: epsrcLogo, href: "https://www.ukri.org/councils/epsrc/" },
 ];
 
 export default function LogoStrip() {
@@ -38,29 +41,32 @@ export default function LogoStrip() {
           role="list"
           aria-label="Partner institution logos"
         >
-          {[...logos, ...logos].map((logo, index) => (
-            <div
-              key={index}
-              className="group flex items-center justify-center h-12 w-32 shrink-0 px-3"
-              title={logo.name}
-              role="listitem"
-            >
-              {" "}
-              <a
-                href={logo.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style="display:block"
+          {[...logos, ...logos].map((logo, index) => {
+            const imgEl = (
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
+                loading="lazy"
+              />
+            );
+            return (
+              <div
+                key={index}
+                className="group flex items-center justify-center h-12 w-32 shrink-0 px-3"
+                title={logo.name}
+                role="listitem"
               >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
-                  loading="lazy"
-                />
-              </a>
-            </div>
-          ))}
+                {logo.href ? (
+                  <a href={logo.href} target="_blank" rel="noopener noreferrer" className="block">
+                    {imgEl}
+                  </a>
+                ) : (
+                  imgEl
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
