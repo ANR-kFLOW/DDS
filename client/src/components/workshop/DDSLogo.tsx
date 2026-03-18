@@ -233,15 +233,12 @@ export default function DDSLogo() {
           </motion.text>
         </motion.svg>
       </motion.div>
-
       <motion.p
         className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl text-center leading-relaxed"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
-      >
-        Data-Driven Storytelling
-      </motion.p>
+      >Data-Driven Storytelling Workshop</motion.p>
     </div>
   );
 }
