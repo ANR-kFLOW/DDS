@@ -132,11 +132,10 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-8">
-              <a href="#" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-foreground/90 transition-colors text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" aria-disabled="true">
+              <a href="https://easychair.org/my2/conference?conf=dds2026" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-foreground/90 transition-colors text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 <Send className="w-5 h-5" aria-hidden="true" />
                 Submit via EasyChair
               </a>
-              <p className="mt-4 text-sm text-muted-foreground">Link coming soon</p>
             </div>
           </motion.div>
         </div>
