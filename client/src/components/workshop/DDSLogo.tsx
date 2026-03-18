@@ -55,7 +55,7 @@ export default function DDSLogo() {
       >
         <motion.svg
           viewBox="0 0 700 220"
-          className="w-full max-w-[700px] h-auto"
+          className="w-full max-w-[900px] h-auto"
           aria-hidden="true"
         >
           <defs>
