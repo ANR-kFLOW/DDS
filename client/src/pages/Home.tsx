@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { CalendarDays, MapPin, Send } from "lucide-react";
+import { CalendarDays, MapPin, Send, FileText } from "lucide-react";
 import About from "@/components/workshop/About";
 import Dates from "@/components/workshop/Dates";
 import Topics from "@/components/workshop/Topics";
 import Chairs from "@/components/workshop/Chairs";
 import Committee from "@/components/workshop/Committee";
-import Venue from "@/components/workshop/Venue";
 import LogoStrip from "@/components/workshop/LogoStrip";
 import HeroParticles from "@/components/workshop/HeroParticles";
 import DDSLogo from "@/components/workshop/DDSLogo";
@@ -173,7 +172,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      <Venue />
       <Chairs />
       <Committee />
     </div>
