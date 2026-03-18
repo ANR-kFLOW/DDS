@@ -20,23 +20,31 @@ function LogoImg({ logo }: { logo: Logo }) {
     <img
       src={logo.src}
       alt={logo.name}
-      className="max-h-full max-w-full object-contain filter grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-300"
+      className="max-h-full max-w-full object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
       loading="lazy"
     />
   );
   return logo.href
-    ? <a href={logo.href} target="_blank" rel="noopener noreferrer" className="block">{imgNode}</a>
-    : imgNode;
+    ? <a href={logo.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">{imgNode}</a>
+    : <div className="flex items-center justify-center w-full h-full">{imgNode}</div>;
 }
 
 export default function LogoStrip() {
-  const doubled = [...logos, ...logos];
   return (
-    <section className="py-8 bg-background/80 overflow-hidden" aria-label="Institutional partners and funders">
-      <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex shrink-0 gap-10 items-center animate-marquee" role="list" aria-label="Partner institution logos">
-          {doubled.map((logo, index) => (
-            <div key={index} className="group flex items-center justify-center h-12 w-32 shrink-0 px-3" title={logo.name} role="listitem">
+    <section className="py-10 bg-background/80" aria-label="Institutional partners and funders">
+      <div className="container mx-auto px-6">
+        <div
+          className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+          role="list"
+          aria-label="Partner institution logos"
+        >
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className="group flex items-center justify-center h-14 w-36 shrink-0"
+              title={logo.name}
+              role="listitem"
+            >
               <LogoImg logo={logo} />
             </div>
           ))}
