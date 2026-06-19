@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Moon, Sun, Minus, Plus } from "lucide-react";
-import { useTheme } from "@/hooks/useTheme";
-import { useFontSize } from "@/hooks/useFontSize";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { id: "home", label: "Home" },
@@ -16,15 +14,12 @@ const links = [
 
 export default function Nav() {
   const [activeSection, setActiveSection] = useState("home");
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [visitedSections, setVisitedSections] = useState<Set<string>>(new Set(["home"]));
   const visitedRef = useRef<Set<string>>(new Set(["home"]));
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const { theme, toggle: toggleTheme } = useTheme();
-  const { sizePercent, increase, decrease, canIncrease, canDecrease } = useFontSize();
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -38,8 +33,6 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
       setScrolled(window.scrollY > 20);
 
       const sections = links.map((l) => document.getElementById(l.id)).filter(Boolean) as HTMLElement[];
@@ -119,15 +112,6 @@ export default function Nav() {
         Skip to main content
       </a>
 
-      <div
-        className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-primary via-purple-500 to-primary z-[60] transition-all duration-150"
-        style={{ width: `${scrollProgress}%` }}
-        role="progressbar"
-        aria-valuenow={Math.round(scrollProgress)}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-label="Page scroll progress"
-      />
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav shadow-lg' : 'bg-transparent'}`}
@@ -173,39 +157,6 @@ export default function Nav() {
           </nav>
 
           <div className="flex items-center gap-1">
-            <div className="hidden sm:flex items-center gap-0.5 mr-1 bg-secondary/50 rounded-full px-1 py-0.5">
-              <button
-                onClick={decrease}
-                disabled={!canDecrease}
-                className="p-1.5 rounded-full hover:bg-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
-                aria-label="Decrease font size"
-                data-testid="button-font-decrease"
-              >
-                <Minus className="w-3.5 h-3.5" />
-              </button>
-              <span className="text-xs font-mono w-8 text-center text-muted-foreground select-none" aria-live="polite">
-                {sizePercent}%
-              </span>
-              <button
-                onClick={increase}
-                disabled={!canIncrease}
-                className="p-1.5 rounded-full hover:bg-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
-                aria-label="Increase font size"
-                data-testid="button-font-increase"
-              >
-                <Plus className="w-3.5 h-3.5" />
-              </button>
-            </div>
-
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl hover:bg-secondary/50 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
-              data-testid="button-theme-toggle"
-            >
-              {theme === "light" ? <Moon className="w-4.5 h-4.5" /> : <Sun className="w-4.5 h-4.5" />}
-            </button>
-
             <button
               ref={menuButtonRef}
               className="lg:hidden p-2 rounded-xl hover:bg-secondary/50 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"

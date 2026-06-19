@@ -8,7 +8,6 @@ import Home from "@/pages/Home";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
-import ReadAloud from "@/components/layout/ReadAloud";
 
 function Router() {
   return (
@@ -22,7 +21,6 @@ function Router() {
       </main>
       <Footer />
       <BackToTop />
-      <ReadAloud />
     </div>
   );
 }
