@@ -146,12 +146,7 @@ export default function Nav() {
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                <span className="relative z-10 flex items-center gap-1.5">
-                  {link.label}
-                  {visitedSections.has(link.id) && activeSection !== link.id && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-                  )}
-                </span>
+                <span className="relative z-10">{link.label}</span>
               </button>
             ))}
           </nav>
@@ -205,33 +200,16 @@ export default function Nav() {
                   transition={{ delay: i * 0.05 }}
                   onClick={() => scrollTo(link.id)}
                   aria-current={activeSection === link.id ? "true" : undefined}
-                  className={`text-left px-4 py-3 rounded-xl text-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary flex items-center justify-between ${
+                  className={`text-left px-4 py-3 rounded-xl text-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                     activeSection === link.id
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:bg-secondary/50"
                   }`}
                 >
                   {link.label}
-                  {visitedSections.has(link.id) && activeSection !== link.id && (
-                    <span className="w-2 h-2 rounded-full bg-primary/40" />
-                  )}
                 </motion.button>
               ))}
 
-              <div className="mt-auto pt-4 border-t flex items-center justify-between">
-                <div className="flex items-center gap-1 bg-secondary/50 rounded-full px-2 py-1">
-                  <button onClick={decrease} disabled={!canDecrease} className="p-1.5 rounded-full disabled:opacity-30" aria-label="Decrease font size">
-                    <Minus className="w-4 h-4" />
-                  </button>
-                  <span className="text-xs font-mono w-8 text-center">{sizePercent}%</span>
-                  <button onClick={increase} disabled={!canIncrease} className="p-1.5 rounded-full disabled:opacity-30" aria-label="Increase font size">
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-                <button onClick={toggleTheme} className="p-2 rounded-xl hover:bg-secondary/50" aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}>
-                  {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-                </button>
-              </div>
             </motion.nav>
           </motion.div>
         )}
