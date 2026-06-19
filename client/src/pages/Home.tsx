@@ -34,7 +34,7 @@ export default function Home() {
               Data-Driven Storytelling Workshop
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-card/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-muted-foreground bg-card/60 backdrop-blur-md p-4 md:p-6 rounded-3xl border w-fit mx-auto shadow-sm mb-10">
               <div className="flex items-center gap-3 px-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                   <CalendarDays className="w-5 h-5" />
@@ -55,10 +55,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <LogoStrip inline />
           </motion.div>
         </div>
       </section>
-      <LogoStrip />
       <About />
       <Topics />
       <section className="py-24 bg-background relative" id="guidelines" aria-labelledby="guidelines-heading">

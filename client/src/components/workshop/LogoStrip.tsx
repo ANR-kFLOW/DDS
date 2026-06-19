@@ -23,7 +23,7 @@ function LogoImg({ logo }: { logo: Logo }) {
     <img
       src={logo.src}
       alt={logo.name}
-      className="max-h-full max-w-full object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+      className="max-h-full max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
       loading="lazy"
     />
   );
@@ -32,26 +32,22 @@ function LogoImg({ logo }: { logo: Logo }) {
     : <div className="flex items-center justify-center w-full h-full">{imgNode}</div>;
 }
 
-export default function LogoStrip() {
+const LogoRow = () => (
+  <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10" role="list" aria-label="Partner institution logos">
+    {logos.map((logo, index) => (
+      <div key={index} className="group flex items-center justify-center h-10 w-28 shrink-0" title={logo.name} role="listitem">
+        <LogoImg logo={logo} />
+      </div>
+    ))}
+  </div>
+);
+
+export default function LogoStrip({ inline }: { inline?: boolean }) {
+  if (inline) return <LogoRow />;
   return (
     <section className="py-10 bg-background/80" aria-label="Institutional partners and funders">
       <div className="container mx-auto px-6">
-        <div
-          className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
-          role="list"
-          aria-label="Partner institution logos"
-        >
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="group flex items-center justify-center h-14 w-36 shrink-0"
-              title={logo.name}
-              role="listitem"
-            >
-              <LogoImg logo={logo} />
-            </div>
-          ))}
-        </div>
+        <LogoRow />
       </div>
     </section>
   );
