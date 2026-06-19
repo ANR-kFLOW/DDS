@@ -7,7 +7,6 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import BackToTop from "@/components/layout/BackToTop";
 
 function Router() {
   return (
@@ -20,7 +19,6 @@ function Router() {
         </Switch>
       </main>
       <Footer />
-      <BackToTop />
     </div>
   );
 }
