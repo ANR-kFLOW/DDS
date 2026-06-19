@@ -2,16 +2,19 @@ import eurecomLogo from "@assets/image_1772802507283.png";
 import salernoLogo from "@assets/image_1772802524655.png";
 import kclLogo from "@assets/image_1772802561236.png";
 import epsrcLogo from "@assets/image_1772805461761.png";
+import tumLogo from "@assets/tum_logo.png";
+import oxfordLogo from "@assets/oxford_logo.png";
+import siemensLogo from "@assets/siemens_logo.png";
 
 type Logo = { name: string; src: string; href?: string };
 
 const logos: Logo[] = [
   { name: "EURECOM", src: eurecomLogo, href: "https://www.eurecom.fr/en" },
   { name: "University of Salerno", src: salernoLogo, href: "https://www.unisa.it/" },
-  { name: "Technical University of Munich", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png", href: "https://www.tum.de/en/" },
+  { name: "Technical University of Munich", src: tumLogo, href: "https://www.tum.de/en/" },
   { name: "King's College London", src: kclLogo, href: "https://www.kcl.ac.uk/" },
-  { name: "University of Oxford", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png", href: "https://www.ox.ac.uk/" },
-  { name: "Siemens", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1200px-Siemens-logo.svg.png", href: "https://www.siemens.com/global/en.html" },
+  { name: "University of Oxford", src: oxfordLogo, href: "https://www.ox.ac.uk/" },
+  { name: "Siemens", src: siemensLogo, href: "https://www.siemens.com/global/en.html" },
   { name: "EPSRC", src: epsrcLogo, href: "https://www.ukri.org/councils/epsrc/" },
 ];
 
