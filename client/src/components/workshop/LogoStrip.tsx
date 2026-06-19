@@ -2,9 +2,9 @@ import eurecomLogo from "@assets/image_1772802507283.png";
 import salernoLogo from "@assets/image_1772802524655.png";
 import kclLogo from "@assets/image_1772802561236.png";
 import epsrcLogo from "@assets/image_1772805461761.png";
-import tumLogo from "@assets/tum_logo.png";
-import oxfordLogo from "@assets/oxford_logo.png";
-import siemensLogo from "@assets/siemens_logo.png";
+import tumLogo from "@assets/tum_logo.svg";
+import oxfordLogo from "@assets/oxford_logo.svg";
+import siemensLogo from "@assets/siemens_logo.svg";
 
 type Logo = { name: string; src: string; href?: string };
 
