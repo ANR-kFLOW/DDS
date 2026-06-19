@@ -32,10 +32,10 @@ function LogoImg({ logo }: { logo: Logo }) {
     : <div className="flex items-center justify-center w-full h-full">{imgNode}</div>;
 }
 
-const LogoRow = () => (
-  <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10" role="list" aria-label="Partner institution logos">
+const LogoRow = ({ nowrap }: { nowrap?: boolean }) => (
+  <div className={`flex ${nowrap ? "flex-nowrap overflow-x-auto" : "flex-wrap"} justify-center items-center gap-6 md:gap-10`} role="list" aria-label="Partner institution logos">
     {logos.map((logo, index) => (
-      <div key={index} className="group flex items-center justify-center h-10 w-28 shrink-0" title={logo.name} role="listitem">
+      <div key={index} className="group flex items-center justify-center h-9 w-24 shrink-0" title={logo.name} role="listitem">
         <LogoImg logo={logo} />
       </div>
     ))}
@@ -43,7 +43,7 @@ const LogoRow = () => (
 );
 
 export default function LogoStrip({ inline }: { inline?: boolean }) {
-  if (inline) return <LogoRow />;
+  if (inline) return <LogoRow nowrap />;
   return (
     <section className="py-10 bg-background/80" aria-label="Institutional partners and funders">
       <div className="container mx-auto px-6">

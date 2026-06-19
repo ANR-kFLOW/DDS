@@ -56,8 +56,11 @@ export default function Home() {
               </div>
             </div>
 
-            <LogoStrip inline />
           </motion.div>
+        </div>
+
+        <div className="absolute bottom-6 left-0 right-0 z-10 px-4">
+          <LogoStrip inline />
         </div>
       </section>
       <About />
