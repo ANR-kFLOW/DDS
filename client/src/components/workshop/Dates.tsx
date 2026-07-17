@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { downloadICS } from "@/lib/calendar";
 
 const dates = [
-  { date: "July 24th", isoDate: "2026-07-25T11:59:00Z", event: "Submission deadline", done: false, important: true },
+  { date: "July 30th", oldDate: "July 24th", isoDate: "2026-07-31T11:59:00Z", event: "Submission deadline", done: false, important: true },
   { date: "August 21st", isoDate: "2026-08-22T11:59:00Z", event: "Notifications", done: false },
   { date: "September 18th", isoDate: "2026-09-19T11:59:00Z", event: "Camera-ready version", done: false },
   { date: "October 25-26", isoDate: "2026-10-25T08:00:00Z", event: "Workshop day", done: false, important: true },
@@ -164,6 +164,9 @@ export default function Dates() {
               >
                 <span className="text-muted-foreground font-medium mb-2 text-sm uppercase tracking-wider">{item.event}</span>
                 <span className={`text-xl md:text-2xl ${item.important ? 'font-bold text-primary' : 'font-semibold text-foreground'}`}>
+                  {'oldDate' in item && item.oldDate && (
+                    <span className="line-through text-muted-foreground font-normal text-base mr-2">{item.oldDate}</span>
+                  )}
                   <time dateTime={item.isoDate || undefined}>{item.date}</time>
                 </span>
                 <CountdownTimer isoDate={item.isoDate} event={item.event} />
