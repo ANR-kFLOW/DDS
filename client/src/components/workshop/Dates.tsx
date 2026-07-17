@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { downloadICS } from "@/lib/calendar";
 
 const dates = [
+  { date: "July 24th", oldDate: "July 17th", isoDate: "2026-07-25T11:59:00Z", event: "Abstract deadline", done: false, important: true },
   { date: "July 30th", oldDate: "July 24th", isoDate: "2026-07-31T11:59:00Z", event: "Submission deadline", done: false, important: true },
   { date: "August 21st", isoDate: "2026-08-22T11:59:00Z", event: "Notifications", done: false },
   { date: "September 18th", isoDate: "2026-09-19T11:59:00Z", event: "Camera-ready version", done: false },
-  { date: "October 25-26", isoDate: "2026-10-25T08:00:00Z", event: "Workshop day", done: false, important: true },
 ];
 
 function useCountdown(targetDate: string | null) {
@@ -89,6 +89,14 @@ function AddToCalendarButton({ item }: { item: typeof dates[number] }) {
         location: "The Nicolaus Hotel, Via Cardinale Agostino Ciasca 27, 70124 Bari, Italy",
         startDate: "2026-10-25",
         endDate: "2026-10-26",
+        allDay: true,
+      });
+    } else if (item.event === "Abstract deadline") {
+      downloadICS({
+        title: "DDS 2026 — Abstract Deadline",
+        description: "Abstract submission deadline for DDS 2026 Workshop at ISWC 2026. All deadlines are 23:59 AoE (UTC-12).",
+        location: "",
+        startDate: item.isoDate!,
         allDay: true,
       });
     } else if (item.event === "Submission deadline") {
