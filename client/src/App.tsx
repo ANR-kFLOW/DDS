@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -8,7 +8,11 @@ import Home from "@/pages/Home";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
-function Router() {
+const routerBase = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+
+function AppRouter() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Nav />
@@ -28,7 +32,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <Router base={routerBase}>
+          <AppRouter />
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );
