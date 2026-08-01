@@ -6,6 +6,8 @@ import lisaImage from "@assets/image_1772803601722.png";
 import eurecomLogo from "@assets/image_1772802507283.png";
 import salernoLogo from "@assets/image_1772802524655.png";
 import kclLogo from "@assets/image_1772802561236.png";
+import tumLogo from "@assets/tum_logo.svg";
+import oxfordLogo from "@assets/oxford_logo.svg";
 
 const chairs = [
   {
@@ -33,7 +35,7 @@ const chairs = [
     institution: "Technical University Munich, Germany",
     role: "Researcher",
     image: lisaImage,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_the_Technical_University_of_Munich.svg/1200px-Logo_of_the_Technical_University_of_Munich.svg.png",
+    logo: tumLogo,
     bio: "Researcher working at the intersection of information retrieval, generative AI, and knowledge graphs, focusing on transforming complex data into interpretable and trustworthy narratives. Her research explores how generative AI, grounded in structured knowledge graphs, supports dataset discovery, metadata curation, and sense-making in open data ecosystems for data-driven storytelling. She is part of the TUM-IAS Focus Group \"Trustworthy Knowledge Graphs\". Her work is supported by the Hans Fischer Senior Fellowship awarded to Prof. E. Simperl and funded by Siemens AG. She collaborates closely with public-sector and industry partners, including projects with Data for London on generative AI for metadata curation and with Siemens on KG-based AI risk assessment.",
     email: "lisa.gan@tum.de",
     url: "https://www.ce.cit.tum.de/en/ldv/team/wissenschaftliche-mitarbeiter/lisa-gan/"
@@ -53,7 +55,7 @@ const chairs = [
     institution: "University of Oxford, UK",
     role: "Researcher",
     image: "https://eavanxing0416.github.io/images/profile.png",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Oxford-University-Circlet.svg/1200px-Oxford-University-Circlet.svg.png",
+    logo: oxfordLogo,
     bio: "Researcher in data visualization at the Oxford e-Research Centre, University of Oxford. Her research focuses on the design and evaluation of human-centered visualization and visual analytics systems through collaborative design studies that support sensemaking, decision-making, and knowledge construction in complex, data-intensive workflows. She has conducted cross-domain research in digital humanities, public health forecasting, and explainable AI, contributing to systems and projects including scFlowVis, OwnershipTracker, the Wellcome Trust-funded DART project, the EPSRC-funded RAMPVIS project, and the EPSRC-funded VIS for ML-assisted human decision-making project. She received her PhD in Computer Science from King's College London, UK.",
     email: "yiwen.xing@eng.ox.ac.uk",
     url: "https://eavanxing0416.github.io/"
