@@ -168,9 +168,28 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="text-center py-12 text-muted-foreground">
-              <p className="text-xl font-semibold">Program to be announced</p>
-              <p className="mt-2 text-sm">Details will be published closer to the workshop date.</p>
+            <div className="mb-10">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <span className="inline-block w-1 h-6 rounded-full bg-primary"></span>
+                Keynote Speaker
+              </h3>
+              <div className="bg-card border rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                <img
+                  src="https://mediafutures.no/wp-content/uploads/Enrico_Motta.jpg"
+                  alt="Enrico Motta"
+                  className="w-24 h-24 rounded-full object-cover object-top shrink-0 ring-2 ring-primary/20"
+                />
+                <div>
+                  <p className="text-xl font-bold leading-tight">Enrico Motta</p>
+                  <p className="text-muted-foreground text-sm mt-0.5">The Open University, UK</p>
+                  <p className="mt-3 text-sm text-muted-foreground italic">Talk title to be announced</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center py-8 text-muted-foreground border border-dashed rounded-2xl">
+              <p className="text-base font-medium">Full program to be announced</p>
+              <p className="mt-1 text-sm">Details will be published closer to the workshop date.</p>
             </div>
           </motion.div>
         </div>
