@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 
 const members = [
-  { name: "Andrea Sillano", institution: "Politecnico di Torino, Italy" },
-  { name: "Luigi de Russis", institution: "Politecnico di Torino, Italy" },
-  { name: "Anisa Rula", institution: "University of Brescia, Italy" },
-  { name: "Antonio Lieto", institution: "University of Salerno, Italy" },
-  { name: "Angelo Salatino", institution: "The Open University, UK" },
-  { name: "Paul Mulholland", institution: "The Open University, UK" },
-  { name: "Marilena Daquino", institution: "University of Bologna, Italy" },
-  { name: "Belén Dìaz Agudo", institution: "Universidad Complutense de Madrid, Spain" },
-  { name: "Mark Alan Finlayson", institution: "Florida International University, United States" },
-  { name: "Enrico Motta", institution: "The Open University, UK" },
-  { name: "Alessandro Mosca", institution: "Free University of Bozen-Bolzano, Italy" },
-  { name: "Blerina Spahiu", institution: "Università degli Studi di Milano-Bicocca, Italy" },
-  { name: "Marieke van Erp", institution: "KNAW Humanities Cluster / DHLab, The Netherlands" },
-  { name: "Sara Tonelli", institution: "Fondazione Bruno Kessler, Italy" },
-  { name: "Veruska Zamborlini", institution: "KNAW Humanities Cluster / DHLab, The Netherlands" },
-  { name: "Rossana Damiano", institution: "University of Turin, Italy" },
-  { name: "Andrea Schimmenti", institution: "University of Bologna, Italy" },
-  { name: "Andras Micsik", institution: "HUN-REN SZTAKI, Hungary" },
-  { name: "Simon Gottschalk", institution: "Leibniz Universität Hannover, Germany" }
+  { name: "Angelo Salatino", institution: "The Open University" },
+  { name: "Beatrice Fiumanò", institution: "University of Bologna" },
+  { name: "Rossana Damiano", institution: "Dipartimento di Informatica, Università di Torino" },
+  { name: "Simon Gottschalk", institution: "Leibniz Universität Hannover, L3S Research Center" },
+  { name: "Simon Mille", institution: "ADAPT, Dublin City University" },
+  { name: "Sara Tonelli", institution: "Fondazione Bruno Kessler" },
+  { name: "Alessandro Mosca", institution: "Institute for Cognitive Sciences and Technologies (ISTC-CNR)" },
+  { name: "Belén Díaz-Agudo", institution: "Universidad Complutense de Madrid" },
+  { name: "Anisa Rula", institution: "University of Brescia" },
+  { name: "Luigi De Russis", institution: "Politecnico di Torino" },
+  { name: "Antonio Lieto", institution: "University of Turin, Department of Computer Science" },
+  { name: "Davide Picca", institution: "University of Lausanne" },
+  { name: "András Micsik", institution: "SZTAKI" },
+  { name: "Paul Mulholland", institution: "The Open University" },
+  { name: "Andrea Schimmenti", institution: "University of Bologna" },
+  { name: "Andrea Sillano", institution: "Politecnico di Torino" },
+  { name: "Mark Finlayson", institution: "Florida International University" },
+  { name: "Marieke van Erp", institution: "KNAW Humanities Cluster" },
+  { name: "Blerina Spahiu", institution: "Università degli Studi di Milano Bicocca" },
+  { name: "Marilena Daquino", institution: "University of Bologna" }
 ];
 
 const cardVariants = {
