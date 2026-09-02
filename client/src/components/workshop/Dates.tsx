@@ -7,7 +7,7 @@ const dates = [
   { date: "July 24th", oldDate: "July 17th", isoDate: "2026-07-25T11:59:00Z", event: "Abstract deadline", done: false, important: true },
   { date: "July 30th", oldDate: "July 24th", isoDate: "2026-07-31T11:59:00Z", event: "Submission deadline", done: false, important: true },
   { date: "August 21st", isoDate: "2026-08-22T11:59:00Z", event: "Notifications", done: false },
-  { date: "September 18th", isoDate: "2026-09-19T11:59:00Z", event: "Camera-ready version", done: false },
+  { date: "September 10th", isoDate: "2026-09-11T11:59:00Z", event: "Camera-ready version", done: false },
 ];
 
 function useCountdown(targetDate: string | null) {
