@@ -275,22 +275,23 @@ export default function Home() {
                   <div className="text-center sm:text-left">
                     <p className="text-2xl font-bold leading-tight">Prof Enrico Motta</p>
                     <p className="text-muted-foreground mt-1">Knowledge Media Institute, The Open University</p>
-                    <p className="mt-4 text-lg font-semibold leading-relaxed text-primary">A neurosymbolic approach to capturing the viewpoint dynamics in media representations of political discourse</p>
+                    <h4 className="mt-5 text-sm font-bold uppercase tracking-wider text-foreground/60">About the speaker</h4>
+                    <p className="mt-2 text-sm sm:text-base leading-relaxed text-muted-foreground">Prof Enrico Motta is a Professor of Knowledge Technologies at the Knowledge Media Institute (KMi) of the UK’s Open University. He also holds a part-time professorial position at the Department of Information Science and Media Studies of the University of Bergen in Norway. His work spans a variety of research areas including data science, semantic and language technologies, intelligent systems and robotics, and human-computer interaction. He has authored over 400 refereed publications and his h-index is 71. His current activities include the use of AI techniques in the academic publishing industry; the deployment of intelligent robots in healthcare and urban settings; and the use of AI techniques to enable large-scale news analytics and support data journalism.</p>
                   </div>
                 </div>
 
-                <div className="mt-8 grid gap-8 border-t pt-8">
+                <div className="mt-8 border-t pt-8">
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-foreground/60">Keynote talk</h4>
+                  <p className="mt-3 text-lg font-semibold leading-relaxed text-primary">A neurosymbolic approach to capturing the viewpoint dynamics in media representations of political discourse</p>
+                </div>
+
+                <div className="mt-8 border-t pt-8">
                   <div>
                     <h4 className="text-sm font-bold uppercase tracking-wider text-foreground/60">Abstract</h4>
                     <div className="mt-3 space-y-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                       <p>News sources play a central role in democratic societies. They contribute to shaping the political discourse by highlighting and giving a platform to specific topics, viewpoints and actors. Making sense of the resulting dynamics is essential to understand to what extent, for a given topic, individual news sources, as well as the news landscape as a whole, fairly represent the variety of viewpoints and actors that contribute to the political debate around the topic in question. Going beyond issues of fairness and balance, such sensemaking is also essential to allow a variety of user audiences to understand the evolution of the debate on a topic, e.g., the temporal evolution of the viewpoints that have emerged over the years on issues such as immigration, climate, AI technologies, and others.</p>
                       <p>For the past few years, together with my research team and external collaborators, I have been conducting a research programme focusing on this task, and in this talk I will provide an overview of the work carried out so far. Major contributions include a formal ontological characterization of the key concepts needed for reasoning about media representations of political discourse; large-scale knowledge graphs accurately capturing the variety of claims made by actors, which are present in an input news corpus; and a number of computational methods that allow us to capture the viewpoint dynamics at scale. In particular, I will show how the adoption of modern neurosymbolic AI pipelines, comprising both knowledge graphs and large language models, produces superior results in terms of accuracy and scalability. These results will be illustrated with case studies drawn from the Immigration and AI domains.</p>
                     </div>
-                  </div>
-
-                  <div className="rounded-xl bg-secondary/20 p-5 sm:p-6">
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-foreground/60">About the speaker</h4>
-                    <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">Prof Enrico Motta is a Professor of Knowledge Technologies at the Knowledge Media Institute (KMi) of the UK’s Open University. He also holds a part-time professorial position at the Department of Information Science and Media Studies of the University of Bergen in Norway. His work spans a variety of research areas including data science, semantic and language technologies, intelligent systems and robotics, and human-computer interaction. He has authored over 400 refereed publications and his h-index is 71. His current activities include the use of AI techniques in the academic publishing industry; the deployment of intelligent robots in healthcare and urban settings; and the use of AI techniques to enable large-scale news analytics and support data journalism.</p>
                   </div>
                 </div>
               </div>
