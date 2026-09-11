@@ -57,7 +57,7 @@ export default function Footer() {
               </a>
               <p className="text-background/60">The Nicolaus Hotel</p>
               <p className="text-background/60">Bari, Italy</p>
-              <p className="text-background/60">October 25-26, 2026</p>
+              <p className="text-background/60">October 26, 2026</p>
             </div>
           </div>
         </div>

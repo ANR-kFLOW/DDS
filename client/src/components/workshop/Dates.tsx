@@ -87,7 +87,7 @@ function AddToCalendarButton({ item }: { item: typeof dates[number] }) {
         title: "DDS 2026 Workshop — Data-Driven Storytelling",
         description: "Data-Driven Storytelling Workshop at ISWC 2026. More info: https://dds2026.github.io",
         location: "The Nicolaus Hotel, Via Cardinale Agostino Ciasca 27, 70124 Bari, Italy",
-        startDate: "2026-10-25",
+        startDate: "2026-10-26",
         endDate: "2026-10-26",
         allDay: true,
       });

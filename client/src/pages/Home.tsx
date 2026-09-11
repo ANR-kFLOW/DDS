@@ -132,7 +132,7 @@ export default function Home() {
                   <CalendarDays className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <span className="font-bold text-foreground block">October 25-26, 2026</span>
+                  <span className="font-bold text-foreground block">October 26, 2026</span>
                   <span className="text-sm">Workshop Dates</span>
                 </div>
               </div>
