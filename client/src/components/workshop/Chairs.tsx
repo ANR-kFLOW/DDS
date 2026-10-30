@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, ExternalLink } from "lucide-react";
 
-import yihangImage from "@assets/image_1772802483946.png";
+import yihangImage from "@assets/Yihang_AS_1793394742644.png";
 import lisaImage from "@assets/image_1772803601722.png";
 import eurecomLogo from "@assets/image_1772802507283.png";
 import salernoLogo from "@assets/image_1772802524655.png";
