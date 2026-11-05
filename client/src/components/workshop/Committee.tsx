@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const members = [
   { name: "Angelo Salatino", institution: "The Open University" },
   { name: "Beatrice Fiumanò", institution: "University of Bologna" },
@@ -23,28 +21,11 @@ const members = [
   { name: "Marilena Daquino", institution: "University of Bologna" }
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 15, scale: 0.97 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.04,
-      duration: 0.35,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  }),
-};
-
 export default function Committee() {
   return (
     <section className="py-24 bg-background" id="committee" aria-labelledby="committee-heading">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-16">
@@ -53,23 +34,18 @@ export default function Committee() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-4" role="list" aria-label="Program committee members">
-            {members.map((member, index) => (
-              <motion.div
-                key={index}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-30px" }}
-                variants={cardVariants}
+            {members.map((member) => (
+              <div
+                key={member.name}
                 role="listitem"
-                className="bg-secondary/20 p-5 rounded-2xl border flex flex-col hover:bg-secondary/40 transition-colors"
+                className="bg-secondary/20 p-5 rounded-2xl border flex flex-col hover:bg-secondary/40"
               >
                 <span className="font-bold text-lg">{member.name}</span>
                 <span className="text-muted-foreground">{member.institution}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

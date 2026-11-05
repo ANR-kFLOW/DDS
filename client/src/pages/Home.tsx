@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CalendarDays, MapPin, Send, FileText } from "lucide-react";
+import { CalendarDays, MapPin, Send, FileText, BookOpen, Trophy, ArrowUpRight } from "lucide-react";
 import About from "@/components/workshop/About";
 import Dates from "@/components/workshop/Dates";
 import Topics from "@/components/workshop/Topics";
@@ -155,6 +155,41 @@ export default function Home() {
           <LogoStrip inline />
         </div>
       </section>
+      <section className="bg-background py-12 md:py-16" aria-labelledby="announcements-heading">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mx-auto max-w-5xl">
+            <h2 id="announcements-heading" className="mb-6 text-2xl font-bold tracking-tight md:text-3xl">Latest announcements</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <a
+                href="https://ceur-ws.org/Vol-4313/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex gap-4 rounded-2xl border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:p-6"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <BookOpen className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="flex items-center gap-2 font-bold text-lg">
+                    Proceedings are out
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">Read the DDS 2026 workshop proceedings in the CEUR Workshop Proceedings series.</span>
+                </span>
+              </a>
+              <article className="flex gap-4 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 shadow-sm sm:p-6">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/15 text-amber-700 dark:text-amber-300">
+                  <Trophy className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <p className="font-bold text-lg">Best Paper Award</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">“From Queries to Narratives: Cultural Heritage Data Stories for Knowledge Graph Exploration and Quality Assessment”</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
       <About />
       <Topics />
       <section className="py-24 bg-background relative" id="guidelines" aria-labelledby="guidelines-heading">
@@ -253,10 +288,11 @@ export default function Home() {
             <div className="bg-secondary/10 rounded-3xl p-8 border shadow-sm mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">Proceedings</h3>
-                <p className="text-muted-foreground">Accepted papers will be published in CEUR Workshop Proceedings, in line with ISWC workshop practices and applicable publication requirements.</p>
+                <p className="text-muted-foreground">The DDS 2026 workshop proceedings are now available in the CEUR Workshop Proceedings series.</p>
               </div>
-              <a href="#" className="px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full hover:bg-secondary/80 transition-colors pointer-events-none opacity-50 shrink-0">
-                Link Available Soon
+              <a href="https://ceur-ws.org/Vol-4313/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-secondary text-secondary-foreground font-medium rounded-full hover:bg-secondary/80 transition-colors shrink-0">
+                Read Proceedings
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
 
@@ -337,9 +373,17 @@ export default function Home() {
                         <ul className="mt-5 space-y-4 border-t pt-5">
                           {item.papers.map((paper) => (
                             <li key={paper.title} className="pl-4 border-l-2 border-primary/30">
-                              <span className="inline-block rounded bg-primary/10 px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wide text-primary">
-                                {paper.format}
-                              </span>
+                              <div className="flex flex-wrap items-center gap-2">
+                                <span className="inline-block rounded bg-primary/10 px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wide text-primary">
+                                  {paper.format}
+                                </span>
+                                {paper.title === "From Queries to Narratives: Cultural Heritage Data Stories for Knowledge Graph Exploration and Quality Assessment" && (
+                                  <span className="inline-flex items-center gap-1 rounded bg-amber-500/15 px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wide text-amber-800 dark:text-amber-300">
+                                    <Trophy className="h-3 w-3" aria-hidden="true" />
+                                    Best Paper Award
+                                  </span>
+                                )}
+                              </div>
                               <p className="mt-2 font-semibold leading-snug">{paper.title}</p>
                               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{paper.authors}</p>
                             </li>

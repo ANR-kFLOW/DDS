@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Mail, ExternalLink } from "lucide-react";
 
 import yihangImage from "@assets/Yihang_AS_1793394742644.png";
@@ -62,27 +61,11 @@ const chairs = [
   }
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.12,
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  }),
-};
-
 export default function Chairs() {
   return (
     <section className="py-24 bg-background" id="organizers" aria-labelledby="organizers-heading">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-16">
@@ -91,22 +74,17 @@ export default function Chairs() {
           </div>
           
           <div className="space-y-8">
-            {chairs.map((chair, index) => (
-              <motion.article 
-                key={index}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={cardVariants}
-                className="relative bg-secondary/10 p-6 md:p-8 rounded-3xl border shadow-sm overflow-hidden group hover:shadow-lg transition-shadow duration-300"
+            {chairs.map((chair) => (
+              <article
+                key={chair.name}
+                className="relative bg-secondary/10 p-6 md:p-8 rounded-3xl border shadow-sm overflow-hidden group hover:shadow-lg"
               >
                 {chair.logo && (
                   <div className="absolute top-5 right-5 md:top-6 md:right-6 w-20 h-12 md:w-28 md:h-14 flex items-start justify-end z-10" aria-hidden="true">
                     <img 
                       src={chair.logo} 
                       alt="" 
-                      className="max-h-full max-w-full object-contain opacity-40 group-hover:opacity-80 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
+                      className="max-h-full max-w-full object-contain opacity-40 group-hover:opacity-80 filter grayscale group-hover:grayscale-0"
                     />
                   </div>
                 )}
@@ -127,7 +105,7 @@ export default function Chairs() {
                     <div className="text-sm font-medium mb-4 flex flex-wrap gap-3">
                       <a
                         href={`mailto:${chair.email}`}
-                        className="text-primary hover:text-primary/80 flex items-center gap-1.5 bg-primary/5 hover:bg-primary/10 px-3 py-1.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        className="text-primary hover:text-primary/80 flex items-center gap-1.5 bg-primary/5 hover:bg-primary/10 px-3 py-1.5 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                         data-testid={`link-email-${chair.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         <Mail className="w-4 h-4" aria-hidden="true" />
@@ -138,7 +116,7 @@ export default function Chairs() {
                           href={chair.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary/80 flex items-center gap-1.5 bg-primary/5 hover:bg-primary/10 px-3 py-1.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                           className="text-primary hover:text-primary/80 flex items-center gap-1.5 bg-primary/5 hover:bg-primary/10 px-3 py-1.5 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                           data-testid={`link-website-${chair.name.toLowerCase().replace(/\s+/g, '-')}`}
                         >
                           <ExternalLink className="w-4 h-4" aria-hidden="true" />
@@ -153,10 +131,10 @@ export default function Chairs() {
                     </p>
                   </div>
                 </div>
-              </motion.article>
+              </article>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
